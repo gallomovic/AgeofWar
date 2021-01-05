@@ -1,14 +1,20 @@
 #include <iostream>
-#include "Playground.hpp"
+#include "Soldier.h"
+#include "SuperSoldier.h"
+#include "Catapult.h"
+#include "Archer.h"
 
-using namespace std;
+int main() {
 
-int main(){
+	Soldier *test = new Soldier();
 
-    Playground p;
-    
+	Archer test2;
 
-    p.printPG();
+	test->show();
 
-    return 0;
+	test2.attack(test);
+
+	test->show();
+
+	return 0;
 }
