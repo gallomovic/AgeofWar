@@ -6,12 +6,12 @@ HEADERS=Archer.h Catapult.h Entite.h Player.h Playground.h Soldier.h SuperSoldie
 %.o: %.cpp
 	$(CXX) $(CXXFLAGS) $< -c -o $@
 
-Main: $(SOURCES) 
+main: $(SOURCES) 
 	$(CXX) $^ -o $@
 
 .PHONY: run clean
 
-run: Main
+run: main
 	./$<
 clean:
 	rm -f *.o *~ core

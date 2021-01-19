@@ -5,6 +5,7 @@
 #include "SuperSoldier.h"
 #include "Catapult.h"
 #include "Archer.h"
+#include "PLayer.h"
 
 int main() {
 

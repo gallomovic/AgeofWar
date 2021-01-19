@@ -3,11 +3,13 @@
 #include <iostream>
 #include <vector>
 
+#include "Units.h"
+
 class Player
 {
 private:
 
-    Vector<Units*> m_PlayerUnits;
+    std::Vector<Units*> m_PlayerUnits;
     bool m_isLeft;
 
 
