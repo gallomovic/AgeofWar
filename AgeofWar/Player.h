@@ -1,13 +1,14 @@
 #ifndef DEF_PLAYER
 #define DEF_PLAYER
 #include <iostream>
+#include <vector>
 
-class Entite
+class Player
 {
 private:
 
-    Units[] m_PlayerUnits;
-    bool isLeft;
+    Vector<Units*> m_PlayerUnits;
+    bool m_isLeft;
 
 
 public:

@@ -101,4 +101,8 @@ void Playground::printPG(){
 
 }
 
+bool Playground::isFree(int pos) {
+        ( pg[pos] == nullptr ) ? true : false;
+} 
+
 

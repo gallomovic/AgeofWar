@@ -8,15 +8,13 @@
 
 int main() {
 
-	Soldier *test = new Soldier();
+	Player *p1 = new Player();
+	Archer *a = new Archer();
+	Soldier *s = new Soldier();
 
-	Archer test2;
-
-	test->show();
-
-	test2.attack(test);
-
-	test->show();
+	p1.addUnit(a);
+	p1.addUnit(s);
+	p1.deleteUnit(a);
 
 	return 0;
 }
