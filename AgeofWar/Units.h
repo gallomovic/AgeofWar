@@ -15,6 +15,10 @@ protected:
 	int m_ap;	 // Attack Points
 	int m_price;
 
+	bool A1 = false; //Did action 1
+	bool A2 = false;
+	bool A3 = false;
+
 
 public:
 
@@ -31,12 +35,11 @@ public:
 
 	void move();
 
-
 	void showHP() const;
 
 	virtual void show()=0;
 
-	
+	int getPosition(Playground*);	
 
 
 };

@@ -3,6 +3,7 @@
 #include <new>
 #include <iostream>
 #include <array>
+
 #include "Entite.h"
 
 class Playground
