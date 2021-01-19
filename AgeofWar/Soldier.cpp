@@ -4,15 +4,16 @@ Soldier::Soldier() : Units(10,4,10) {}
 
 Soldier::~Soldier() {}
 
-Units Soldier::promote() {
+void Soldier::promote() {
+	SuperSoldier *s = new SuperSoldier(this->m_hp);
 	delete this;
-	return new SuperSoldier();
+	/* TODO : Placer le supersoldat */
 }
 
 void Soldier::attack(Units *cible) const {
 	Units::attack(cible);
 	if (cible->isDead()) {
-		this = promote();
+		// promote();
 	}
 }
 

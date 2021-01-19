@@ -7,10 +7,11 @@
 
 class Playground
 {
-private:
-    //Entite pg[12];
+protected:
+    Entite* pg[12];
 
 public:
+
     Playground(){    };
     ~Playground(){
         delete this;

@@ -18,7 +18,6 @@ void Playground::printPG(){
         
         std::cout << std::endl;
         
-
         //affichage des infos du jeu 
         
         std::cout << "Joueur 1 : " << std::endl;

@@ -3,6 +3,7 @@
 
 
 #include "Units.h"
+#include "SuperSoldier.h"
 #include <iostream>
 #include <stdlib.h>
 
