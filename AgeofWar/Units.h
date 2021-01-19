@@ -31,12 +31,12 @@ public:
 
 	void move();
 
-	bool isAlive();
-
 
 	void showHP() const;
 
 	virtual void show()=0;
+
+	
 
 
 };

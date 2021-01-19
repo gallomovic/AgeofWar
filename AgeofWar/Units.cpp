@@ -21,11 +21,4 @@ void Units::move() {
 	//TODO
 }
 
-bool Units::isAlive(){
-	if (m_hp <= 0){
-		return false;
-	}else{
-		return true;
-	}
-}
 

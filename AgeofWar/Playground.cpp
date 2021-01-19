@@ -51,7 +51,7 @@ void Playground::printPG(){
         //affichage du playground
 
         //bases
-        std::cout << "-----   ----                                                                                                             -----   ----";
+        std::cout << "-----  -----                                                                                                             -----  -----";
         std::cout << std::endl;
         std::cout << "|   |  |   |                                                                                                             |   |  |   |" ;
         std::cout << std::endl;

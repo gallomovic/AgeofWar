@@ -10,7 +10,3 @@ void Archer::show(){
 	std::cout << "0\nY}-\n^";
 
 }
-
-void Archer::print(){
-	
-}
