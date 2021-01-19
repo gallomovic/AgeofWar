@@ -1,7 +1,8 @@
 #ifndef DEF_ENTITE
 #define DEF_ENTITE
 #include <iostream>
-#include <Player.h>
+
+#include "Player.h"
 
 class Entite
 {

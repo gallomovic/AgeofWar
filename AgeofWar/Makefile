@@ -1,6 +1,6 @@
 CXX=g++
 CXXFLAGS=-Wall -Wextra -Werror
-SOURCES=Archer.cpp Catapult.cpp Entite.cpp Player.cpp Playground.cpp Soldier.cpp SuperSoldier.cpp Units.cpp main.cpp
+SOURCES=Archer.cpp Catapult.cpp Entite.cpp Player.cpp Playground.cpp Soldier.cpp SuperSoldier.cpp Units.cpp main.cpp 
 HEADERS=Archer.h Catapult.h Entite.h Player.h Playground.h Soldier.h SuperSoldier.h Units.h
 
 %.o: %.cpp
