@@ -7,7 +7,7 @@ class Entite
 protected:
 
     int m_hp;
-
+    Entite* m_owner;
 
 public:
 
