@@ -5,9 +5,12 @@
 #include "SuperSoldier.h"
 #include "Catapult.h"
 #include "Archer.h"
-#include "PLayer.h"
+#include "Player.h"
+#include "Playground.h"
 
 int main() {
+
+	Playground p = new Playground();
 
 	Player *p1 = new Player();
 	Archer *a = new Archer();
