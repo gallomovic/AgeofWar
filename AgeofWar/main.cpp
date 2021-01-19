@@ -6,7 +6,7 @@
 #include "Catapult.h"
 #include "Archer.h"
 #include "Player.h"
-#include "Playground.h"
+#include "Playground.hpp"
 
 int main() {
 
