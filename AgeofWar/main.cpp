@@ -13,9 +13,9 @@ int main() {
 	Archer *a = new Archer();
 	Soldier *s = new Soldier();
 
-	p1.addUnit(a);
-	p1.addUnit(s);
-	p1.deleteUnit(a);
+	p1->addUnit(a);
+	p1->addUnit(s);
+	p1->deleteUnit(a);
 
 	return 0;
 }
