@@ -49,6 +49,12 @@ void Playground::printPG(){
 
 
         //affichage du playground
+
+        //bases
+        std::cout << "-----   ----                                                                                                             -----   ----";
+        std::cout << std::endl;
+        std::cout << "|   |  |   |                                                                                                             |   |  |   |" ;
+        std::cout << std::endl;
         
         //ligne du dessus
         for (int i = 0; i < 12; i++){
