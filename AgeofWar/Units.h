@@ -31,6 +31,8 @@ public:
 
 	void move();
 
+	bool isAlive();
+
 
 	void showHP() const;
 
