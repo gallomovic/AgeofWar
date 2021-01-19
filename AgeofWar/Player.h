@@ -5,6 +5,7 @@
 
 #include "Playground.hpp"
 #include "Units.h"
+class Units;
 
 class Player
 {
@@ -16,10 +17,10 @@ private:
 
 public:
 
-    Player();
+    Player(bool);
     ~Player();
 
-    void addUnit(Units*,int);
+    void addUnit(Playground*,Units*,int);
     void deleteUnit(Units*);
     bool isLeft();
 

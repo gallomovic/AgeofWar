@@ -3,6 +3,7 @@
 #include <iostream>
 
 #include "Player.h"
+class Player;
 
 class Entite
 {

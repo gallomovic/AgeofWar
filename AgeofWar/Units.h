@@ -1,11 +1,11 @@
 #ifndef DEF_UNITS
 #define DEF_UNITS
 
-
 #include <iostream>
 #include <stdlib.h>
-#include "Entite.h"
 
+#include "Entite.h"
+class Playground;
 
 class Units : public Entite {
 

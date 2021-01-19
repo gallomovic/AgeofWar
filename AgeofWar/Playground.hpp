@@ -4,7 +4,9 @@
 #include <iostream>
 #include <array>
 
+#include "Units.h"
 #include "Entite.h"
+class Entite;
 
 class Playground
 {
