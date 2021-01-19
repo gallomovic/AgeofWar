@@ -1,5 +1,6 @@
 #include "MainMenu.hpp"
 #include <iostream>
+#include <string>
 
 void MainMenu::printMM(){
     
@@ -18,13 +19,13 @@ void MainMenu::printMM(){
     std::cout << "----------------------------------------------------------------------------------------------------------------------" << std::endl;
 
     std::cin << answ ;
-    if (ans == y){
+    if (answ == "y"){
         //start new game
     }
-    else if (ans == n){
+    else if (answ == "n"){
         //load game
     }
-    else { cout << "Erreur" }
+    else { std::cout << "Erreur"; }
 
 
 }

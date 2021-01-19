@@ -1,5 +1,7 @@
 #include "Playground.hpp"
 #include <iostream>
+#include <vector>
+#include <string>
 
 
 void Playground::printPG(){
@@ -8,16 +10,22 @@ void Playground::printPG(){
         std::cout << std::endl;
         std::cout << std::endl;
 
-        std::cout << "----------------------------------------------------------------------------------------------------------------------" << std::endl;
-        std::cout << "----------------------------------------------------------------------------------------------------------------------" << std::endl;
-        std::cout << "----------------------------------------------------------------------------------------------------------------------" << std::endl;
-        std::cout << "----------------------------------------- AGE OF WAR VERSION BASTIEN ET ENZO -----------------------------------------" << std::endl;
-        std::cout << "----------------------------------------------------------------------------------------------------------------------" << std::endl;
-        std::cout << "----------------------------------------------------------------------------------------------------------------------" << std::endl;
-        std::cout << "----------------------------------------------------------------------------------------------------------------------" << std::endl;
-        
+        std::cout<< "        ___       _______     _______       ________    ______                         ___       ______";
+        std::cout << std::endl;
+        std::cout<< "       /   \\     |          |              |        |   |           \\            /    /   \\     |      |" ;
+        std::cout << std::endl;
+        std::cout<< "      /_____\\    |    ____  |____          |        |   |____        \\    /\\    /    /_____\\    |______|";
+        std::cout << std::endl;
+        std::cout<< "     /       \\   |       |  |              |        |   |             \\  /  \\  /    /       \\   |    \\";
+        std::cout << std::endl;
+        std::cout<< "    /         \\  |_______|  |_______       |________|   |              \\/    \\/    /         \\  |     \\" ;
+
+        std::cout << std::endl;
+        std::cout << std::endl;
+        std::cout << std::endl;
         std::cout << std::endl;
         
+
         //affichage des infos du jeu 
         
         std::cout << "Joueur 1 : " << std::endl;
@@ -32,7 +40,7 @@ void Playground::printPG(){
         << std::endl;
        
         
-        std::cout << "---------------------------" << std::endl;
+        std::cout << "__________________________" << std::endl;
 
         std::cout << "Joueur 2 : " << std::endl;
 
@@ -45,21 +53,48 @@ void Playground::printPG(){
         << std::endl;
 
         
-        std::cout << "---------------------------" << std::endl;
+        std::cout << "__________________________" << std::endl;
 
 
         //affichage du playground
 
+        //idée si ça se décale quand on affichera les unités
+        // faire un vecteur de matrices d'affichage des unités
+        //  O
+        // /|\|)->
+        // / \.
+
+        //  \o
+        // __\_
+        //|____|
+        // O   O
+
+        //  O
+        // /|\/
+        // / \.
+
+        //   _
+        //   O
+        // \/|\/
+        //  / \.
+
+
         //bases
-        std::cout << "-----  -----                                                                                                             -----  -----";
+        std::cout << " ___    ___                                                                                                               ___    ___";
         std::cout << std::endl;
         std::cout << "|   |  |   |                                                                                                             |   |  |   |" ;
         std::cout << std::endl;
-        
+        std::cout << "|   |__|   |_____________________________________________________________________________________________________________|   |__|   |" ;
+        std::cout << std::endl;
+
+
+
+        std::cout << "|          |";
         //ligne du dessus
-        for (int i = 0; i < 12; i++){
-                std::cout << "-----------";
+        for (int i = 0; i < 11; i++){
+                std::cout << "          |";
         }
+        //std::cout << "|          |";
 
         std::cout << std::endl;
         
@@ -82,12 +117,12 @@ void Playground::printPG(){
         std::cout << std::endl;
 
         //Actions de l'entité i
-        for (int i = 0; i <= 12; i++){
-                std::cout << "|      ";
+        for (int i = 0; i <= 11; i++){
+                std::cout << "|__________";
                 //std::cout<< Entité.actions
-                std::cout << "    ";
+                
         }
-        std::cout << std::endl;
+        std::cout << "|" << std::endl;
 
 
         //if case vide
@@ -96,19 +131,12 @@ void Playground::printPG(){
         //}
         
 
-
-        //ligne du dessous
-        for (int i = 0; i < 12; i++){
-                std::cout << "-----------";
-        }
+        std::cout << std::endl;
         std::cout << std::endl;
 
 
 
-}
 
-bool Playground::isFree(int pos) {
-       return ( pg[pos] == nullptr ) ? true : false;
-} 
+}
 
 

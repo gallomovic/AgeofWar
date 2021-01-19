@@ -5,32 +5,21 @@
 #include "SuperSoldier.h"
 #include "Catapult.h"
 #include "Archer.h"
-#include "Player.h"
-#include "Playground.hpp"
+#include "PLayer.h"
 
 int main() {
 
-	init();
-
+	Player *p1 = new Player();
 	Archer *a = new Archer();
 	Soldier *s = new Soldier();
 
-	p1.addUnit(p,a);
-	p1.addUnit(p,s);
-	p1.deleteUnit(a);
+	p1->addUnit(a);
+	p1->addUnit(s);
+	p1->deleteUnit(a);
 
 	return 0;
 }
 
-
-void init() {
-
-	Playground p = new Playground();
-
-	Player *p1 = new Player(true);
-	Player *p2 = new Player(false);	
-
-}
 /*
 
 
