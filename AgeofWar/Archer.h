@@ -15,6 +15,7 @@ public:
 	~Archer();
 
 	void show();
+	void print();
 
 };
 
