@@ -1,13 +1,17 @@
 #include "Player.h"
 
 
+Player::Player (bool i) : m_isLeft(i) {}
+
+Player::~Player() {}
+
 void Player::addUnit(Playground *p, Units *u, int pos = -1) {
 
     if (pos!=-1) { //Cas unique de la promotion soldat -> supersoldat
         if (p->isFree(pos)) {
             p->pg[pos] = u;
             this->m_PlayerUnits.push_back(u);
-            u->m_owner = this;
+            u->setOwner(this);
         } 
         return;
     }
@@ -19,7 +23,7 @@ void Player::addUnit(Playground *p, Units *u, int pos = -1) {
     }
 
     this->m_PlayerUnits.push_back(u);
-    u->m_owner = this;
+    u->setOwner(this);
 }
 
 void Player::removeUnit(Units *u) {

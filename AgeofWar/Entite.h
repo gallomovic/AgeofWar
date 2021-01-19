@@ -16,8 +16,9 @@ public:
     ~Entite();
 
     int getPosition() const;
-
     bool isDead() const;
+
+    void setOwner(Player* p) { m_owner = p; }
 
 };
 
