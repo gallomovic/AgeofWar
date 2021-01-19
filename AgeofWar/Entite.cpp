@@ -13,5 +13,5 @@ int Entite::getPosition() const {
 }
 
 bool Entite::isDead() const {
-    (m_hp <= 0) ? true : false ; 
+    return (m_hp <= 0) ? true : false ; 
 }

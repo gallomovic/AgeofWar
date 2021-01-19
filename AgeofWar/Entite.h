@@ -2,12 +2,14 @@
 #define DEF_ENTITE
 #include <iostream>
 
+#include "Player.h"
+
 class Entite
 {
 protected:
 
     int m_hp;
-    Entite* m_owner;
+    Player* m_owner;
 
 public:
 
@@ -15,8 +17,9 @@ public:
     ~Entite();
 
     int getPosition() const;
-
     bool isDead() const;
+
+    void setOwner(Player* p) { m_owner = p; }
 
 };
 
