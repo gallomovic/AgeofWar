@@ -1,7 +1,17 @@
 #include "Player.h"
 
 
-Player::Player (bool i) : m_isLeft(i) {}
+Player::Player (bool i) : m_isLeft(i) , m_golds(10) {
+/*
+    if (i) {
+        PlayerBase *pl = new PlayerBase(this);
+        p->pg[0] = pl;
+    } else {
+        PlayerBase *pl = new PlayerBase(this);
+        p->pg[p->pg.size()-1] = pl;
+    }
+*/
+}
 
 Player::~Player() {}
 
@@ -19,25 +29,30 @@ void Player::addUnit(Playground *p, Units *u, int pos = -1) {
     if (this->isLeft()) {
         p->pg[1] = u;
     } else {
-        p->pg[11] = u;
+        p->pg[p->pg.size()-2] = u;
     }
 
     this->m_PlayerUnits.push_back(u);
     u->setOwner(this);
 }
 
-void Player::removeUnit(Units *u) {
-
-    for (int i = 0; i<this->m_PlayerUnits.size() ; i++) {
+void Player::deleteUnit(Playground* p, Units *u) {
+/*
+    for (int i = 0; i<(int)this->m_PlayerUnits.size() ; i++) {
         if (this->m_PlayerUnits.at(i) == u) {
             this->m_PlayerUnits.erase(i);
         }
     }
 
-/*
+
     delete u ; 
     this->m_PlayerUnits.resize();
 */
+/*
+    int i = p->getPosition(u);
+    p->pg[i] = NULL;
+*/
+    delete u;
 }
 
 bool Player::isLeft() {

@@ -1,10 +1,10 @@
-#include "Playground.hpp"
+#include "Playground.h"
 #include <iostream>
 #include <vector>
 #include <string>
 
 
-void Playground::printPG(){
+void Playground::printPG(Player* p1, Player *p2){
 
 
         std::cout << std::endl;
@@ -31,12 +31,10 @@ void Playground::printPG(){
         std::cout << "Joueur 1 : " << std::endl;
 
 
-        std::cout << "Points de vie de la base :" 
-        // << HP base Joueur 1
+        std::cout << "Points de vie de la base :" << pg[0]->getHP()
         << std::endl;
 
-        std::cout << "Nombre de pièces :" 
-        // << nb pieces Joueur 1
+        std::cout << "Nombre de pièces :" << p1->getGolds()
         << std::endl;
        
         
@@ -44,12 +42,10 @@ void Playground::printPG(){
 
         std::cout << "Joueur 2 : " << std::endl;
 
-        std::cout << "Points de vie de la base :" 
-        // << HP base Joueur 2
+        std::cout << "Points de vie de la base :" << pg[pg.size()-1]->getHP()
         << std::endl;
 
-        std::cout << "Nombre de pièces :" 
-        // << nb pieces Joueur 2
+        std::cout << "Nombre de pièces :" << p2->getGolds()
         << std::endl;
 
         
@@ -102,7 +98,7 @@ void Playground::printPG(){
         //symbole de l'entité i
         for (int i = 0; i <= 12; i++){
                         std::cout << "|      ";
-                        //std::cout<< Entité.symbole
+                        if (!this->isFree(i)) {std::cout<< pg[i]->m_name ;}
                         //chaque entité (unité ou base) a un symbole dédié qu'on déterminera
                         std::cout << "    ";
         }
@@ -111,7 +107,7 @@ void Playground::printPG(){
         //HP de l'entité i
         for (int i = 0; i <= 12; i++){
                 std::cout << "|      ";
-                //std::cout<< Entité.HP
+                if (!this->isFree(i)) {std::cout<< pg[i]->getHP() ;}
                 std::cout << "    ";
         }
         std::cout << std::endl;
@@ -137,6 +133,10 @@ void Playground::printPG(){
 
 
 
+}
+
+bool Playground::isFree(int pos) {
+        return (this->pg[pos]==NULL) ? true : false;
 }
 
 

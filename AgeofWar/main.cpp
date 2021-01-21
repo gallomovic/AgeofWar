@@ -5,17 +5,42 @@
 #include "SuperSoldier.h"
 #include "Catapult.h"
 #include "Archer.h"
-#include "PLayer.h"
+#include "Player.h"
+#include "PlayerBase.h"
 
 int main() {
 
-	Player *p1 = new Player();
+	Playground *p = new Playground();
+
+	Player *p1 = new Player(true);
+	Player *p2 = new Player(false);
+
+	
+
+	PlayerBase *pbl = new PlayerBase();
+    p->pg[0] = pbl;
+
+    PlayerBase *pb2 = new PlayerBase();
+    p->pg[p->pg.size()-1] = pb2;
+    
+
+	p->printPG(p1,p2);
+
 	Archer *a = new Archer();
 	Soldier *s = new Soldier();
 
-	p1->addUnit(p,a);
-	p1->addUnit(p,s);
-	p1->deleteUnit(p,a);
+	p1->addUnit(p,a,-1);
+	p2->addUnit(p,s,-1);
+
+	p-> printPG(p1,p2);
+
+	delete a;
+	delete s;
+
+	p->printPG(p1,p2);
+
+	delete p;
+	delete p1;
 
 	return 0;
 }
@@ -42,5 +67,6 @@ int main(int argc, char * argv[]) {
 	}
 	return 0;
 }
+
 
 */

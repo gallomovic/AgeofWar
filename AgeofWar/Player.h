@@ -3,9 +3,11 @@
 #include <iostream>
 #include <vector>
 
-#include "Playground.hpp"
+#include "Playground.h"
 #include "Units.h"
+
 class Units;
+class Playground;
 
 class Player
 {
@@ -13,6 +15,7 @@ private:
 
     std::vector<Units*> m_PlayerUnits;
     bool m_isLeft;
+    int m_golds;
 
 
 public:
@@ -21,9 +24,14 @@ public:
     ~Player();
 
     void addUnit(Playground*,Units*,int);
+
+    int getGolds() {return m_golds;}
+
     void deleteUnit(Units*);
     bool isLeft();
 
 };
+
+
 
 #endif

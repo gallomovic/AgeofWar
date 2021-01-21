@@ -3,8 +3,10 @@
 
 #include <iostream>
 #include <stdlib.h>
+#include <string>
 
 #include "Entite.h"
+
 class Playground;
 
 class Units : public Entite {
@@ -22,7 +24,9 @@ protected:
 
 public:
 
-	Units(int,int,int);
+	Units(int,int,int,std::string);
+	virtual ~Units();
+
 
 	/*
 	int getHP() const;
@@ -33,9 +37,9 @@ public:
 
 	void attack(Units*) const;
 
-	void move();
+	void move(Playground*);
 
-	void showHP() const;
+
 
 	virtual void show()=0;
 

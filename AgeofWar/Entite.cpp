@@ -4,7 +4,7 @@
 
 
 
-Entite::Entite(int hp) : m_hp(hp) {}
+Entite::Entite(int hp, std::string name) : m_hp(hp), m_name(name) {}
 
 Entite::~Entite() {}
 
