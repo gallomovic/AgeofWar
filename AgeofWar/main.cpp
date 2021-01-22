@@ -15,8 +15,6 @@ int main() {
 	Player *p1 = new Player(true);
 	Player *p2 = new Player(false);
 
-	
-
 	PlayerBase *pbl = new PlayerBase();
     p->pg[0] = pbl;
 
@@ -26,7 +24,7 @@ int main() {
 
 	p->printPG(p1,p2);
 
-	Archer *a = new Archer();
+	Soldier *a = new Soldier();
 	Soldier *s = new Soldier();
 
 	p1->addUnit(p,a,-1);
@@ -43,12 +41,17 @@ int main() {
 	a->move(p);
 	a->move(p);
 	a->move(p);
+	a->move(p);
+	a->move(p);
+	a->move(p);
 
-	a->attack(a->canAttack(p));
+	a->attack(p,a->canAttack(p));
+	a->attack(p,a->canAttack(p));
+	a->attack(p,a->canAttack(p));
 
 	p-> printPG(p1,p2);
 
-	p1->deleteUnit(p,a);
+	//p1->deleteUnit(p,a);
 	p2->deleteUnit(p,s);
 
 	p->printPG(p1,p2);

@@ -19,7 +19,7 @@ public:
     std::string m_name;
 
     Entite(int,std::string);
-    ~Entite();
+    virtual ~Entite();
 
     int getPosition() const;
     bool isDead() const;

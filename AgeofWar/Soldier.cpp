@@ -1,25 +1,21 @@
 #include "Soldier.h"
 
-template<typename Base, typename T>
-inline bool instanceof(const T *ptr) {
-    return dynamic_cast<const Base*>(ptr) != nullptr;
-}
 
 Soldier::Soldier() : Units(10,4,10,1,"Soldier") {}
 
 Soldier::~Soldier() {}
 
 void Soldier::promote(Playground* p) {
-	SuperSoldier *s = new SuperSoldier(this->m_hp);
+	SuperSoldier *s = new SuperSoldier(this->getHP());
 	int i = this->getPosition(p);
 	s->setOwner(this->m_owner);
 	this->m_owner->deleteUnit(p,this);
 	s->getOwner()->addUnit(p,s,i);
 }
 
-void Soldier::attack(Playground *p,Units *cible) {
+void Soldier::attack(Playground *p,Entite *cible) {
 	Units::attack(cible);
-	if (cible->isDead() && instanceof<Soldier>(cible) ) {
+	if (cible->isDead() && dynamic_cast<Soldier*>(cible) != nullptr ) {
 		this->promote(p);
 	}
 }

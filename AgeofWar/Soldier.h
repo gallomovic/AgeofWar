@@ -19,7 +19,7 @@ public:
 	Soldier();
 	~Soldier();
 
-	void attack(Playground*,Units*);
+	void attack(Playground*,Entite*);
 	void show();
 
 };
