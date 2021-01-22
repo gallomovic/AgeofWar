@@ -10,11 +10,12 @@ class Entite
 {
 protected:
 
-    int m_hp;
+    
     Player* m_owner;
 
 public:
 
+    int m_hp;
     std::string m_name;
 
     Entite(int,std::string);
@@ -26,6 +27,7 @@ public:
     int getHP() const { return m_hp; }
 
     void setOwner(Player* p) { m_owner = p; }
+    Player* getOwner() { return m_owner; }
 
 };
 

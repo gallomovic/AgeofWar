@@ -14,6 +14,7 @@ public:
 	Archer();
 	~Archer();
 
+	//bool canAttack();
 	void show();
 
 };

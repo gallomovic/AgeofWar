@@ -12,14 +12,14 @@ class Soldier : public Units {
 
 private:
 
-	void promote();
+	void promote(Playground*);
 
 public:
 
 	Soldier();
 	~Soldier();
 
-	void attack(Units*) const;
+	void attack(Playground*,Units*);
 	void show();
 
 };

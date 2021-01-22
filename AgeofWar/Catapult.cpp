@@ -1,6 +1,6 @@
 #include "Catapult.h"
 
-Catapult::Catapult() : Units(12, 6, 20,"Catapult") {}
+Catapult::Catapult() : Units(12, 6, 20,4,"Catapult") {}
 
 Catapult::~Catapult() {}
 

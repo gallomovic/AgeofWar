@@ -34,8 +34,22 @@ int main() {
 
 	p-> printPG(p1,p2);
 
-	delete a;
-	delete s;
+	a->move(p);
+	s->move(p);
+
+	p-> printPG(p1,p2);
+
+	a->move(p);
+	a->move(p);
+	a->move(p);
+	a->move(p);
+
+	a->attack(a->canAttack(p));
+
+	p-> printPG(p1,p2);
+
+	p1->deleteUnit(p,a);
+	p2->deleteUnit(p,s);
 
 	p->printPG(p1,p2);
 

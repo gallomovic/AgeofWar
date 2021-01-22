@@ -48,10 +48,10 @@ void Player::deleteUnit(Playground* p, Units *u) {
     delete u ; 
     this->m_PlayerUnits.resize();
 */
-/*
-    int i = p->getPosition(u);
+
+    int i = u->getPosition(p);
     p->pg[i] = NULL;
-*/
+
     delete u;
 }
 

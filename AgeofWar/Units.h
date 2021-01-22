@@ -16,6 +16,7 @@ protected:
 	int m_hp;  // Health Points
 	int m_ap;	 // Attack Points
 	int m_price;
+	int m_portee;
 
 	bool A1 = false; //Did action 1
 	bool A2 = false;
@@ -24,7 +25,7 @@ protected:
 
 public:
 
-	Units(int,int,int,std::string);
+	Units(int,int,int,int,std::string);
 	virtual ~Units();
 
 
@@ -35,11 +36,12 @@ public:
 	void setHP(int);
 	*/
 
-	void attack(Units*) const;
+	virtual void attack(Entite*) const;
+
+	virtual Entite* canAttack(Playground*);
+
 
 	void move(Playground*);
-
-
 
 	virtual void show()=0;
 

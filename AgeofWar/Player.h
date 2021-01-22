@@ -27,7 +27,7 @@ public:
 
     int getGolds() {return m_golds;}
 
-    void deleteUnit(Units*);
+    void deleteUnit(Playground*,Units*);
     bool isLeft();
 
 };
