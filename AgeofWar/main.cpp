@@ -12,6 +12,8 @@ int main() {
 
 	Playground *p = new Playground();
 
+	p->printlogo();	//afichage du logo age of war seulement au début
+
 	Player *p1 = new Player(true);
 	Player *p2 = new Player(false);
 

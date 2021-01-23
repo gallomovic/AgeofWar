@@ -22,6 +22,9 @@ void Soldier::attack(Playground *p,Entite *cible) {
 
 void Soldier::show(){
 
+	//  O
+    // /|\/
+    // / \.
 	
 	std::cout << "0/\nY\n^";
 		     

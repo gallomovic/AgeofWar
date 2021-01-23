@@ -10,8 +10,16 @@
 class SuperSoldier : public Units {
 
 public:
-
-	SuperSoldier(int);
+    //  O
+    //\/|\/
+    // / \.
+	SuperSoldier(int)
+	{
+		symbol[0][0] = "  O";
+		symbol[0][1] = "\\/|\\/";
+		symbol[0][2] = "/ \\";
+		symbol[0][3] = "";
+	};
 	~SuperSoldier();
 
 	void show();

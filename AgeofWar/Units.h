@@ -17,6 +17,7 @@ protected:
 	int m_ap;	 // Attack Points
 	int m_price;
 	int m_portee;
+	std::array<std::array<std::string,4>,1> symbol;
 
 	bool A1 = false; //Did action 1
 	bool A2 = false;
@@ -24,7 +25,7 @@ protected:
 
 
 public:
-
+	Units(){};
 	Units(int,int,int,int,std::string);
 	virtual ~Units();
 
@@ -43,7 +44,8 @@ public:
 
 	void move(Playground*);
 
-	virtual void show()=0;
+	//virtual void show()=0;
+
 
 	int getPosition(Playground*);	
 

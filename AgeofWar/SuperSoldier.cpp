@@ -6,6 +6,11 @@ SuperSoldier::~SuperSoldier() {}
 
 void SuperSoldier::show() {
 
+    //   _
+    //   O
+    // \/|\/
+    //  / \.	
+
 	std::cout << " 0/\n{Y}\n ^ ";
 
 }

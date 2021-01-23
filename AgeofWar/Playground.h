@@ -3,6 +3,7 @@
 #include <new>
 #include <iostream>
 #include <array>
+#include <vector>
 
 #include "Units.h"
 
@@ -14,7 +15,10 @@ class Playground
 
 public:
 
+
+
     std::array<Entite*,12> pg;
+
 
     Playground(){    };
     ~Playground(){
@@ -22,6 +26,7 @@ public:
     };
 
     void printPG(Player*,Player*);
+    void printlogo();
     bool isFree(int); //Renvoie true si la position est vide
     
 };
