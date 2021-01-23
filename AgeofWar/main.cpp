@@ -63,6 +63,7 @@ int main() {
 
 	delete p;
 	delete p1;
+	delete p2;
 
 	return 0;
 }

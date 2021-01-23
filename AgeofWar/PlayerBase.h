@@ -7,7 +7,7 @@
 
 #include "Units.h"
 
-class PlayerBase : public Units { //Probleme d'include circulaire si PlayerBase herite de Entite...
+class PlayerBase : public Units { //Probleme d'include circulaire si PlayerBase herite de Entite... (╯°□°）╯︵ ┻━┻)
 
 public:
 
