@@ -3,6 +3,22 @@
 #include <vector>
 #include <string>
 
+void print10(std::string s) {  //Print la string contenue dans 10 charactères 
+
+        int n =  10-s.size();
+
+        for (int i=0; i< (int)n/2 ; i++) {
+                std::cout << " ";
+                n--;
+        }
+
+        std::cout << s;
+
+        while (n>0) {
+                std::cout << " ";
+                n--;
+        }
+}
 
 void Playground::printlogo(){
         
@@ -89,34 +105,50 @@ void Playground::printPG(Player* p1, Player *p2){
         //if case non vide
         //nom de l'entité i
         for (int i = 0; i <= 12; i++){
-                        std::cout << "|      ";
+                        std::cout << "|";
                         if (!this->isFree(i)) {
-                                std::cout<< pg[i]->m_name;
+
+                                print10(pg[i]->m_name);
+                        } else {
+
+                                print10(" ");
                         }
                         //chaque entité (unité ou base) a un symbole dédié qu'on déterminera
-                        std::cout << "    ";
         }
         std::cout << std::endl;
 
         //HP de l'entité i
         for (int i = 0; i <= 12; i++){
-                std::cout << "|      ";
-                if (!this->isFree(i)) {std::cout<< pg[i]->getHP() ;}
-                std::cout << "    ";
+                std::cout << "|";
+                if (!this->isFree(i)) { 
+                
+                        print10( std::to_string(pg[i]->getHP()) ) ;
+                        
+                } else {
+
+                        print10(" ");
+                }
         }
         std::cout << std::endl;
 
         //symbole de l'entité i
-        for (int i = 0; i <= 12; i++){
-                std::cout << "|      ";
-                if (!this->isFree(i)) {
-                        for(int j=0; j<=4; j++){
-                                //std::cout << pg[i]->symbol[0][j] << std::endl;
+        for(int j=0; j<4; j++) {      // Affichage par ligne
+                
+                for (int i = 0; i <= 12; i++) {
+
+                        std::cout << "|";
+
+                        if (!this->isFree(i)) {
+
+                             std::cout << pg[i]->symbol[j];  // Le bug venait du fait que yavait symbol dans Entite.h et Units.h et que le tableau etait de dim 2
+
+                        } else {
+                                print10(" ");
                         }
+
                 }
-                std::cout << "    ";
+                std::cout << std::endl;
         }
-        std::cout << std::endl;
         
 
         //Actions de l'entité i
@@ -147,5 +179,7 @@ void Playground::printPG(Player* p1, Player *p2){
 bool Playground::isFree(int pos) {
         return (this->pg[pos]==NULL) ? true : false;
 }
+
+
 
 

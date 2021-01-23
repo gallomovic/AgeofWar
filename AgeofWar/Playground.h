@@ -27,6 +27,7 @@ public:
 
     void printPG(Player*,Player*);
     void printlogo();
+    
     bool isFree(int); //Renvoie true si la position est vide
     
 };

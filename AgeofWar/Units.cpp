@@ -12,6 +12,19 @@ void Units::attack (Entite *cible) const {
 
 }
 
+void Units::attack (Playground* p, Units *cible) const {
+
+	cible->m_hp -= m_ap;
+
+	if (cible->isDead()){
+
+		this->m_owner->giveGolds(cible->m_price/2); // le joueur gagne la moitié du prix de l'unité tuée
+
+		cible->getOwner()->deleteUnit(p,cible); //la cible est détruite
+
+	}
+}
+
 
 void Units::move(Playground *p) {
 

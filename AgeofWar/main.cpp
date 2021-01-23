@@ -10,6 +10,7 @@
 
 int main() {
 
+
 	Playground *p = new Playground();
 
 	p->printlogo();	//afichage du logo age of war seulement au début
@@ -28,6 +29,8 @@ int main() {
 
 	Soldier *a = new Soldier();
 	Soldier *s = new Soldier();
+
+	std::cout << "TEST :" << a->getSymbol(0);
 
 	p1->addUnit(p,a,-1);
 	p2->addUnit(p,s,-1);

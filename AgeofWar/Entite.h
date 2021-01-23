@@ -17,13 +17,11 @@ public:
 
     int m_hp;
     std::string m_name;
-    std::array<std::array<std::string,4>,1> symbol;
+    std::string symbol[4];
 
-    Entite();
-    Entite(int,std::string){};
+    Entite(int,std::string);
     virtual ~Entite();
 
-    int getPosition() const;
     bool isDead() const;
 
     int getHP() const { return m_hp; }
@@ -32,6 +30,8 @@ public:
 
     void setOwner(Player* p) { m_owner = p; }
     Player* getOwner() { return m_owner; }
+
+    std::string getSymbol(int i) { return this->symbol[i]; }
 
 };
 

@@ -1,7 +1,15 @@
 #include "Soldier.h"
 
 
-Soldier::Soldier() : Units(10,4,10,1,"Soldier") {}
+Soldier::Soldier() : Units(10,4,10,1,"Soldier") {
+	//  O
+    // /|\/
+    // / \.
+	this->symbol[0] = "   O      ";
+	this->symbol[1] = "  /|\\/    ";
+	this->symbol[2] = "  / \\     ";
+	this->symbol[3] = "          ";	
+}
 
 Soldier::~Soldier() {}
 

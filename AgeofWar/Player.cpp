@@ -55,6 +55,3 @@ void Player::deleteUnit(Playground* p, Units *u) {
     delete u;
 }
 
-bool Player::isLeft() {
-    return m_isLeft;
-}

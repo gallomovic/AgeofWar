@@ -15,16 +15,8 @@ private:
 	void promote(Playground*);
 
 public:
-	//  O
-    // /|\/
-    // / \.
-	Soldier()
-	{
-		symbol[0][0] = " O";
-		symbol[0][1] = "/|\\/";
-		symbol[0][2] = "/ \\";
-		symbol[0][3] = "";	
-	};
+	
+	Soldier();
 	~Soldier();
 
 	void attack(Playground*,Entite*);
