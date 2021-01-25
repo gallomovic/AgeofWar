@@ -1,6 +1,10 @@
 //Pas besoin de header vu que playturn n'a que des fonctions qu'on appelera dans le main
 #include "Playground.h"
 #include "Player.h"
+#include "Soldier.h"
+#include "Archer.h"
+#include "Catapult.h"
+
 
 //Achat d'unité pour le joueur
 void achatUnit (Playground* p, Player *pl) {
@@ -10,7 +14,9 @@ void achatUnit (Playground* p, Player *pl) {
           std::cout << "What do you want to buy ?     1)Soldier (10g)      2)Archer (12g)          3)Catapult (20g)     4)Skip" << std::endl;
 
           bool ok;
+          
           do {
+
           int choice;
           ok = false;
           std::cin >> choice;
@@ -54,18 +60,15 @@ void Playturn(Playground* p, Player *pl) {
                 u->action1(p);
         }
 
-        for (int i = pl->getUnits().size() ; i >=0 ; i--) {
+        for (int i = pl->getUnits().size()-1 ; i >=0 ; i--) {
                 pl->getUnits().at(i)->action2(p);
         }
 
-        for (int i = pl->getUnits().size() ; i >=0 ; i--) {
+        for (int i = pl->getUnits().size()-1 ; i >=0 ; i--) {
                 pl->getUnits().at(i)->action3(p);
         }
 
         achatUnit(p,pl);
 }
-
-
-
 
 

@@ -3,18 +3,22 @@
 // std::stoi in C++11
 //#include<cstdlib> 
 // use std::strtol in C++03
+/*
 #include "Soldier.h"
 #include "SuperSoldier.h"
 #include "Catapult.h"
 #include "Archer.h"
 #include "Player.h"
 #include "PlayerBase.h"
+*/
 
-#include "Playturn.cpp"
+#include "Game.h"
+#include "MainMenu.h"
+
 
 int main() {
 
-
+/*
 	Playground *p = new Playground();
 
 	p->printlogo();	//affichage du logo age of war seulement au début
@@ -73,6 +77,24 @@ int main() {
 	delete p;
 	delete p1;
 	delete p2;
+*/
+
+
+	printMM();
+
+	std::string answ;
+    std::cin >> answ ;
+    if (answ == "y"){
+        
+		Game *G = new Game();
+
+		G->play();
+
+    }
+    else if (answ == "n"){
+        //load game
+    }
+    else { std::cout << "Erreur"; }
 
 	return 0;
 }
