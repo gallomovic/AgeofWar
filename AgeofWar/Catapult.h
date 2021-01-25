@@ -16,6 +16,7 @@ public:
 	Catapult(bool isLeft);
 	~Catapult();
 
+	void attack(Playground*,Units*);
 	void show();
 
 };

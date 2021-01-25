@@ -7,7 +7,7 @@ void print10(std::string s) {  //Print la string contenue dans 10 charactères
 
         int n =  10-s.size();
 
-        for (int i=0; i< (int)n/2 ; i++) {
+        for (int i=0; i < (int)n/2 ; i++) {
                 std::cout << " ";
                 n--;
         }
@@ -122,7 +122,7 @@ void Playground::printPG(Player* p1, Player *p2){
                 std::cout << "|";
                 if (!this->isFree(i)) { 
                 
-                        print10( std::to_string(pg[i]->getHP()) ) ;
+                        print10( "HP:" + std::to_string(pg[i]->getHP()) ) ;
                         
                 } else {
 

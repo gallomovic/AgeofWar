@@ -7,8 +7,10 @@
 #include "Playground.h"
 #include "Units.h"
 
+
 class Units;
 class Playground;
+
 
 class Player
 {
@@ -18,6 +20,7 @@ private:
     bool m_isLeft; //True = Joueur à gauche
     int m_golds;
 
+    //PlayerBase* PB;
 
 public:
 

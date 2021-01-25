@@ -28,8 +28,8 @@ void Soldier::promote(Playground* p) {
 	s->getOwner()->addUnit(p,s,i);
 }
 
-void Soldier::attack(Playground *p,Entite *cible) {
-	Units::attack(cible);
+void Soldier::attack(Playground *p,Units *cible) {
+	Units::attack(p,cible);
 	if (cible->isDead() && dynamic_cast<Soldier*>(cible) != nullptr ) {
 		this->promote(p);
 	}

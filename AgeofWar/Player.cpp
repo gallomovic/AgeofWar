@@ -44,22 +44,19 @@ void Player::addUnit(Playground *p, Units *u, int pos = -1) {
 }
 
 void Player::deleteUnit(Playground* p, Units *u) {
-/*
+
+    int i = u->getPos();
+    p->pg[i] = NULL;
+
     for (int i = 0; i<(int)this->m_PlayerUnits.size() ; i++) {
         if (this->m_PlayerUnits.at(i) == u) {
-            this->m_PlayerUnits.erase(i);
+            this->m_PlayerUnits.erase(this->m_PlayerUnits.begin()+i);
         }
     }
 
 
-    delete u ; 
-    this->m_PlayerUnits.resize();
-*/
+   // delete u ; 
 
-    int i = u->getPosition(p);
-    p->pg[i] = NULL;
-
-    delete u;
 }
 
 

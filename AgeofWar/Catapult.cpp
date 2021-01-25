@@ -1,6 +1,6 @@
 #include "Catapult.h"
 
-Catapult::Catapult(bool isLeft) : Units(12, 6, 20,4,"Catapult") {
+Catapult::Catapult(bool isLeft) : Units(12, 6, 20, 4,"Catapult") {
 	
 	if (isLeft){
 		this->symbol[0] = "   \\o     ";
@@ -18,6 +18,34 @@ Catapult::Catapult(bool isLeft) : Units(12, 6, 20,4,"Catapult") {
 }
 
 Catapult::~Catapult() {}
+
+void Catapult::attack(Playground *p,Units *cible) {
+	int d = std::abs(this->getPos() - cible->getPos());
+	if (d == 2) { 
+		Units::attack(p,cible); 
+		if (this->getOwner()->isLeft()) {
+			if (this->getPos()+3 < (int)p->pg.size() && p->pg[this->getPos()+3] != NULL) { Units::attack(p,p->pg[this->getPos()+3]); }
+		} else {
+			if (this->getPos()-3 >= 0 && p->pg[this->getPos()-3] != NULL) { Units::attack(p,p->pg[this->getPos()-3]); }
+		}
+	}
+	if (d == 3) { 
+		Units::attack(p,cible); 
+		if (this->getOwner()->isLeft()) {
+			if (this->getPos()+4 < (int)p->pg.size() && p->pg[this->getPos()+4] != NULL) { Units::attack(p,p->pg[this->getPos()+4]); }
+		} else {
+			if (this->getPos()-4 >= 0 && p->pg[this->getPos()-4] != NULL) { Units::attack(p,p->pg[this->getPos()-4]); }
+		}
+	}
+	if (d == 4) { 
+		Units::attack(p,cible); 
+		if (this->getOwner()->isLeft()) {
+			if (this->getPos()+3 < (int)p->pg.size() && p->pg[this->getPos()+3] != NULL) { Units::attack(p,p->pg[this->getPos()+3]); }
+		} else {
+			if (this->getPos()-3 >= 0 && p->pg[this->getPos()-3] != NULL) { Units::attack(p,p->pg[this->getPos()-3]); }
+		}
+	}
+}
 
 void Catapult::show() {
 

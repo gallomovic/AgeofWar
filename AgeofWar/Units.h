@@ -13,7 +13,7 @@ class Units : public Entite {
 
 protected:
 
-	int m_hp;  // Health Points
+	//int m_hp;  // Health Points
 	int m_ap;	 // Attack Points
 	int m_price;
 	int m_portee;
@@ -38,12 +38,12 @@ public:
 	void setHP(int);
 	*/
 
-	virtual void attack(Entite*) const; //Attaque sur une Entite (PlayerBase) => Inutile pour l'instant car PlayerBase est de type Units
+	virtual void attackBase(Entite*) const; //Attaque sur une Entite (PlayerBase) => Inutile pour l'instant car PlayerBase est de type Units
 	virtual void attack(Playground*,Units*) const;  // Attaque la cible passée en paramètre, la cible est retirée après l'attaque si elle est dead
 
-	virtual Entite* canAttack(Playground*);  // Renvoie la première unité attaquable
+	virtual Units* canAttack(Playground*);  // Renvoie la première unité attaquable
 
-	int getPos() { return m_pos; }
+	int getPos() const { return m_pos; }
 	void setPos(int p) { m_pos=p; }
 
 	void move(Playground*);  // déplace l'unité d'1 case

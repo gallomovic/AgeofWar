@@ -6,18 +6,20 @@
 #include <vector>
 
 #include "Units.h"
+#include "Player.h"
 
 class Player;
-class Entite;
+class Units;
 
 class Playground
 {
 
 public:
 
+    std::array<Units*,12> pg;
 
-
-    std::array<Entite*,12> pg;
+    Units* PlayerBaseL;
+    Units* PlayerBaseR;
 
 
     Playground(){    };
