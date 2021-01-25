@@ -31,10 +31,8 @@ int main() {
 
 	p->printPG(p1,p2);
 
-	Soldier *a = new Soldier(p1->isLeft());
+	Catapult *a = new Catapult(p1->isLeft());
 	Soldier *s = new Soldier(p2->isLeft());
-
-	//std::cout << "TEST :" << a->getSymbol(0);
 
 	p1->addUnit(p,a,-1);
 	p2->addUnit(p,s,-1);
@@ -44,24 +42,31 @@ int main() {
 	a->move(p);
 	s->move(p);
 
-	p-> printPG(p1,p2);
-
-	a->move(p);
-	a->move(p);
-	a->move(p);
-	a->move(p);
-	a->move(p);
-	a->move(p);
-	a->move(p);
-
-	a->attack(p,a->canAttack(p));
-	a->attack(p,a->canAttack(p));
-	a->attack(p,a->canAttack(p));
+	Soldier *s2 = new Soldier(p2->isLeft());
+	p2->addUnit(p,s2,-1);
 
 	p-> printPG(p1,p2);
 
-	//p1->deleteUnit(p,a);
-	p2->deleteUnit(p,s);
+	a->move(p);
+	a->move(p);
+	a->move(p);
+	a->move(p);
+	a->move(p);
+	//a->move(p);
+	
+
+	a->attack(p,a->canAttack(p));
+	a->attack(p,a->canAttack(p));
+
+	
+	//a->move(p);
+
+	a->attack(p,a->canAttack(p));
+
+	p-> printPG(p1,p2);
+
+	p1->deleteUnit(p,a);
+	//p2->deleteUnit(p,s);
 
 	p->printPG(p1,p2);
 

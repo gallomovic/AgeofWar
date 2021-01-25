@@ -7,8 +7,10 @@
 #include "Playground.h"
 #include "Units.h"
 
+
 class Units;
 class Playground;
+
 
 class Player
 {
@@ -18,13 +20,14 @@ private:
     bool m_isLeft; //True = Joueur à gauche
     int m_golds;
 
+    //PlayerBase* PB;
 
 public:
 
     Player(bool);
     ~Player();
 
-    void addUnit(Playground*,Units*,int); /* ajoute l'unite passée en paramètre sur le Playground et dans le vecteur d'unités du joueur
+    void addUnit(Playground*,Units*,int = -1); /* ajoute l'unite passée en paramètre sur le Playground et dans le vecteur d'unités du joueur
                                           int donne la position où ajouter (-1 si non paramétré et donc la premiere case de gauche ou droite) */
 
     void sortVectorUnit();
@@ -33,6 +36,8 @@ public:
 
     int getGolds() {return m_golds;}
     void giveGolds(int i) { this->m_golds += i; }
+
+    std::vector<Units*> getUnits() { return m_PlayerUnits; }
 
     void deleteUnit(Playground*,Units*); // retire l'unite passée en paramètre sur le Playground et dans le vecteur unité du joueur
     bool isLeft() {return m_isLeft;}
