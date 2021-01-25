@@ -20,6 +20,7 @@ public:
 	~Soldier();
 
 	void attack(Playground*,Units*);
+	void action3(Playground*);
 	void show();
 
 };

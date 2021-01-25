@@ -45,3 +45,12 @@ void Soldier::show(){
 		     
 }
 
+void Soldier::action3(Playground* p) {
+
+	if (!this->A1) {
+		Units::action3(p);
+	}
+
+	this->A1 = false;
+}
+

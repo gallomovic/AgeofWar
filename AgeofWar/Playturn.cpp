@@ -2,17 +2,6 @@
 #include "Playground.h"
 #include "Player.h"
 
-/*
-void Playturn(Playground* p, Player *pl) {
-
-        //TODO :)
-        //si p1 action 1, 2 et 3 ok (+ nvlles unités) --> p2 et inversement
-        
-
-
-
-}*/
-
 //Achat d'unité pour le joueur
 void achatUnit (Playground* p, Player *pl) {
 
@@ -56,6 +45,27 @@ void achatUnit (Playground* p, Player *pl) {
 
         }
 }
+
+void Playturn(Playground* p, Player *pl) {
+
+        pl->sortVectorUnit();
+        
+        for (Units* u : pl->getUnits()) {
+                u->action1(p);
+        }
+
+        for (int i = pl->getUnits().size() ; i >=0 ; i--) {
+                pl->getUnits().at(i)->action2(p);
+        }
+
+        for (int i = pl->getUnits().size() ; i >=0 ; i--) {
+                pl->getUnits().at(i)->action3(p);
+        }
+
+        achatUnit(p,pl);
+}
+
+
 
 
 

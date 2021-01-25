@@ -52,3 +52,15 @@ void Catapult::show() {
 	std::cout << "0==[]\n   o o";
 
 }
+
+void Catapult::action2(Playground* p) {
+	int i = p->pg.size(); //Lignes inutiles, contourner -Werror : unused-variable
+	i--;
+}
+
+void Catapult::action3(Playground* p) {
+
+	if (!this->A1) { this->move(p); }
+	
+	this->A1 = false;
+}

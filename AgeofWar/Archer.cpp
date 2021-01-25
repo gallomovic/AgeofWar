@@ -24,3 +24,7 @@ void Archer::show(){
 
 }
 
+void Archer::action3(Playground* p) {
+	int i = p->pg.size(); //Lignes inutiles, contourner -Werror : unused-variable
+	i--;
+}

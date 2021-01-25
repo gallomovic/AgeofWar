@@ -43,6 +43,10 @@ public:
 
 	virtual Units* canAttack(Playground*);  // Renvoie la première unité attaquable
 
+	virtual void action1(Playground*);
+	virtual void action2(Playground*);
+	virtual void action3(Playground*);
+
 	int getPos() const { return m_pos; }
 	void setPos(int p) { m_pos=p; }
 

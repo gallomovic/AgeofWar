@@ -106,3 +106,25 @@ Units* Units::canAttack(Playground *p) {
 
 }
 
+void Units::action1(Playground* p) {
+
+	Units* cible = this->canAttack(p);
+
+	if (cible != NULL) { this->attack(p,cible); this->A1 = true; }
+	
+}
+
+void Units::action2(Playground* p) {
+
+	this->move(p);
+	
+}
+
+void Units::action3(Playground* p) {
+
+	Units* cible = this->canAttack(p);
+
+	if (cible != NULL) { this->attack(p,cible); }
+	
+}
+

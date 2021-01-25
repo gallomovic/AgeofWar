@@ -14,6 +14,7 @@ public:
 	~Archer();
 
 	//bool canAttack();
+	void action3(Playground*);
 	void show();
 
 };

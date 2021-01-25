@@ -37,6 +37,8 @@ public:
     int getGolds() {return m_golds;}
     void giveGolds(int i) { this->m_golds += i; }
 
+    std::vector<Units*> getUnits() { return m_PlayerUnits; }
+
     void deleteUnit(Playground*,Units*); // retire l'unite passée en paramètre sur le Playground et dans le vecteur unité du joueur
     bool isLeft() {return m_isLeft;}
 
