@@ -1,6 +1,6 @@
 #include "Archer.h"
 
-Archer::Archer(bool isLeft) : Units(8, 3, 12,3,"Archer") {
+Archer::Archer(bool isLeft) : Units(8, 3, 12, 3,"Archer") {
 	if(isLeft){
 		this->symbol[0] = "   O      ";
 		this->symbol[1] = "  /|\\|)-> ";

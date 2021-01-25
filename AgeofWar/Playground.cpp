@@ -53,11 +53,9 @@ void Playground::printPG(Player* p1, Player *p2){
         std::cout << "Joueur 1 : " << std::endl;
 
 
-        std::cout << "Points de vie de la base :" << pg[0]->getHP()
-        << std::endl;
+        std::cout << "Points de vie de la base :" << this->PlayerBaseL->getHP() << std::endl;
 
-        std::cout << "Nombre de pièces :" << p1->getGolds()
-        << std::endl;
+        std::cout << "Nombre de pièces :" << p1->getGolds() << std::endl;
        
         
         std::cout << "__________________________" << std::endl;
@@ -66,11 +64,9 @@ void Playground::printPG(Player* p1, Player *p2){
 
         std::cout << "Joueur 2 : " << std::endl;
 
-        std::cout << "Points de vie de la base :" << pg[pg.size()-1]->getHP()
-        << std::endl;
+        std::cout << "Points de vie de la base :" << this->PlayerBaseR->getHP() << std::endl;
 
-        std::cout << "Nombre de pièces :" << p2->getGolds()
-        << std::endl;
+        std::cout << "Nombre de pièces :" << p2->getGolds() << std::endl;
 
         
         std::cout << "__________________________" << std::endl;
@@ -93,20 +89,20 @@ void Playground::printPG(Player* p1, Player *p2){
 
 
 
-        std::cout << "|          |";
+        std::cout << "| Player1  |";
         //ligne du dessus
-        for (int i = 0; i < 11; i++){
+        for (int i = 0; i < 10; i++){
                 std::cout << "          |";
         }
-        //std::cout << "|          |";
+        std::cout << "  Player2 |";
 
         std::cout << std::endl;
         
-        //if case non vide
+        
         //nom de l'entité i
-        for (int i = 0; i <= 12; i++){
+        for (int i = 0; i < 12; i++){
                         std::cout << "|";
-                        if (!this->isFree(i)) {
+                        if (!this->isFree(i)) { //if case non vide
 
                                 print10(pg[i]->m_name);
                         } else {
@@ -118,7 +114,7 @@ void Playground::printPG(Player* p1, Player *p2){
         std::cout << std::endl;
 
         //HP de l'entité i
-        for (int i = 0; i <= 12; i++){
+        for (int i = 0; i < 12; i++){
                 std::cout << "|";
                 if (!this->isFree(i)) { 
                 
@@ -159,7 +155,12 @@ void Playground::printPG(Player* p1, Player *p2){
         }
         std::cout << "|" << std::endl;
 
-
+        //Num de case
+        for (int i = 0; i <= 11; i++){
+                std::cout << "|";
+                print10(std::to_string(i+1));
+        }
+        std::cout << "|" << std::endl;
 
 
         //if case vide

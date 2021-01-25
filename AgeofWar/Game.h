@@ -3,6 +3,9 @@
 
 #include "Player.h"
 #include "Playground.h"
+#include "PlayerBase.h"
+#include "Playturn.h"
+
 
 class Game
 {
@@ -14,9 +17,10 @@ class Game
 
 public:
 
-    void init();
-    bool win();
+    Game();
+    ~Game();
 
+    bool win();
     void play();
 
 };

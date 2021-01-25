@@ -1,8 +1,8 @@
-#include "MainMenu.hpp"
 #include <iostream>
 #include <string>
+#include "MainMenu.h"
 
-void MainMenu::printMM(){
+void printMM(){
     
 
     std::cout << std::endl;
@@ -18,6 +18,7 @@ void MainMenu::printMM(){
     std::cout << "----------------------------------------------------------------------------------------------------------------------" << std::endl;
     std::cout << "----------------------------------------------------------------------------------------------------------------------" << std::endl;
 
+/*
     std::string answ;
     std::cin >> answ ;
     if (answ == "y"){
@@ -28,5 +29,6 @@ void MainMenu::printMM(){
     }
     else { std::cout << "Erreur"; }
 
-
+*/
 }
+
