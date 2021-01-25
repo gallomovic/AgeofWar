@@ -2,6 +2,7 @@
 #include <iostream>
 #include <vector>
 #include <string>
+#define couleur(param) printf("\033[%sm",param)
 
 void print10(std::string s) {  //Print la string contenue dans 10 charactères 
 
@@ -21,6 +22,14 @@ void print10(std::string s) {  //Print la string contenue dans 10 charactères
 }
 
 void Playground::printlogo(){
+
+        
+
+        couleur("37"); //1er arg couleur du fond, 2e arg couleur de la police
+        couleur("1"); //intensifie la couleur
+        
+
+
         
         std::cout << std::endl;
         std::cout << std::endl;
@@ -78,6 +87,9 @@ void Playground::printPG(Player* p1, Player *p2){
         // faire un vecteur de matrices d'affichage des unités
 
 
+        
+        couleur("36");
+        couleur("1");
 
         //bases
         std::cout << " ___    ___                                                                                                               ___    ___";
@@ -100,25 +112,56 @@ void Playground::printPG(Player* p1, Player *p2){
         
         
         //nom de l'entité i
-        for (int i = 0; i < 12; i++){
-                        std::cout << "|";
-                        if (!this->isFree(i)) { //if case non vide
-
+        for (int i = 0; i <= 12; i++){
+                couleur("36");
+                couleur("1");
+                std::cout << "|";
+                couleur("0");
+                if (!this->isFree(i)) {
+                        if( ((pg[i]->getOwner() == p1) && (p1->isLeft())) ||
+                                ((pg[i]->getOwner() == p2) && (p2->isLeft())) )
+                        {
+                                couleur("31"); //rouge
+                                couleur("1");
                                 print10(pg[i]->m_name);
-                        } else {
+                                couleur("0");
+                        }
+                        else {
+                                couleur("34"); //bleu
+                                couleur("1");
+                                print10(pg[i]->m_name);
+                                couleur("0");
+                        }
+                                
+                } else {
 
                                 print10(" ");
-                        }
-                        //chaque entité (unité ou base) a un symbole dédié qu'on déterminera
+                }
+                //chaque entité (unité ou base) a un symbole dédié qu'on déterminera
         }
         std::cout << std::endl;
 
         //HP de l'entité i
-        for (int i = 0; i < 12; i++){
+        for (int i = 0; i <= 12; i++){
+                couleur("36");
+                couleur("1");
                 std::cout << "|";
                 if (!this->isFree(i)) { 
-                
-                        print10( "HP:" + std::to_string(pg[i]->getHP()) ) ;
+
+                        if( ((pg[i]->getOwner() == p1) && (p1->isLeft())) ||
+                                ((pg[i]->getOwner() == p2) && (p2->isLeft())) )
+                        {
+                                couleur("31"); //rouge
+                                couleur("1");
+                                print10( "HP:" + std::to_string(pg[i]->getHP()) ) ;
+                                couleur("0");
+                        }
+                        else {
+                                couleur("34"); //bleu
+                                couleur("1");
+                                print10( "HP:" + std::to_string(pg[i]->getHP()) ) ;
+                                couleur("0");
+                        }
                         
                 } else {
 
@@ -132,11 +175,28 @@ void Playground::printPG(Player* p1, Player *p2){
                 
                 for (int i = 0; i <= 12; i++) {
 
+                        couleur("36");
+                        couleur("1");
                         std::cout << "|";
 
                         if (!this->isFree(i)) {
 
-                             std::cout << pg[i]->symbol[j];  // Le bug venait du fait que yavait symbol dans Entite.h et Units.h et que le tableau etait de dim 2
+                                if( ((pg[i]->getOwner() == p1) && (p1->isLeft())) ||
+                                ((pg[i]->getOwner() == p2) && (p2->isLeft())) )
+                                {       
+                                        couleur("31"); //rouge
+                                        couleur("1");
+                                        print10( pg[i]->symbol[j] ) ;
+                                        couleur("0");
+                                }
+                                else {
+                                        couleur("34"); //bleu
+                                        couleur("1");
+                                        print10( pg[i]->symbol[j] ) ;
+                                        couleur("0");
+                                }
+
+                             //std::cout << pg[i]->symbol[j];  // Le bug venait du fait que yavait symbol dans Entite.h et Units.h et que le tableau etait de dim 2
 
                         } else {
                                 print10(" ");
@@ -146,7 +206,8 @@ void Playground::printPG(Player* p1, Player *p2){
                 std::cout << std::endl;
         }
         
-
+        couleur("36");
+        couleur("1");
         //Actions de l'entité i
         for (int i = 0; i <= 11; i++){
                 std::cout << "|__________";
