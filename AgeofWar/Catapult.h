@@ -13,7 +13,7 @@ public:
 
 	
 
-	Catapult();
+	Catapult(bool isLeft);
 	~Catapult();
 
 	void show();
