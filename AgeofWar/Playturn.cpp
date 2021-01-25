@@ -28,22 +28,22 @@ void achatUnit (Playground* p, Player *pl) {
 
                 switch (choice) { //CHECKER LE PRIX ET LE SOUSTRAIRE
                         case 1 : if (pl->getGolds() >= 10){
-                                        pl->setGolds((pl->getGolds())-10); pl->addUnit(p,new Soldier(pl->isLeft()),-1); ok=true; break;
+                                        pl->setGolds((pl->getGolds())-10); pl->addUnit(p,new Soldier(pl->isLeft())); ok=true; break;
                                 } else {
-                                        std::cout << "Not enough gold to buy a soldier"; std::endl; break;
+                                        std::cout << "Not enough gold to buy a soldier" << std::endl; break;
                                 }
                         
                         case 2 : if (pl->getGolds() >=12){
-                                        pl->setGolds((pl->getGolds())-12); pl->addUnit(p,new Archer(pl->isLeft()),-1); ok=true; break;
+                                        pl->setGolds((pl->getGolds())-12); pl->addUnit(p,new Archer(pl->isLeft())); ok=true; break;
                                 } else {
-                                        std::cout << "Not enough gold to buy an archer"; std::endl; break;
+                                        std::cout << "Not enough gold to buy an archer" << std::endl; break;
                                 }
                         case 3 : if (pl->getGolds() >=20){
-                                        pl->setGolds((pl->getGolds())-20); pl->addUnit(p,new Catapult(pl->isLeft()),-1); ok=true; break;
+                                        pl->setGolds((pl->getGolds())-20); pl->addUnit(p,new Catapult(pl->isLeft())); ok=true; break;
                                 } else {
-                                        std::cout << "Not enough gold to buy a catapult"; std::endl; break;
+                                        std::cout << "Not enough gold to buy a catapult" << std::endl; break;
                                 }
-                        case 4 : ok=true; 
+                        case 4 : ok=true; break;
                         default : std::cout << "Please enter a valid value (1, 2 or 3)" << std::endl;
                 }
 

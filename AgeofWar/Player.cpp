@@ -19,7 +19,7 @@ void Player::setGolds(int value){
     m_golds = value;
 }
 
-void Player::addUnit(Playground *p, Units *u, int pos = -1) {
+void Player::addUnit(Playground *p, Units *u, int pos) {
 
     if (pos!=-1) { //Cas unique de la promotion soldat -> supersoldat
         if (p->isFree(pos)) {
