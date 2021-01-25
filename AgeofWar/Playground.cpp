@@ -2,6 +2,7 @@
 #include <iostream>
 #include <vector>
 #include <string>
+#define couleur(param) printf("\033[%sm",param)
 
 void print10(std::string s) {  //Print la string contenue dans 10 charactères 
 
@@ -21,24 +22,29 @@ void print10(std::string s) {  //Print la string contenue dans 10 charactères
 }
 
 void Playground::printlogo(){
+
+        couleur("32");
+
         
         std::cout << std::endl;
         std::cout << std::endl;
 
-        std::cout<< "        ___       _______     _______       ________    ______                         ___       ______";
+        std::cout << "        ___       _______     _______       ________    ______                         ___       ______";
         std::cout << std::endl;
-        std::cout<< "       /   \\     |          |              |        |   |           \\            /    /   \\     |      |" ;
+        std::cout << "       /   \\     |          |              |        |   |           \\            /    /   \\     |      |" ;
         std::cout << std::endl;
-        std::cout<< "      /_____\\    |    ____  |____          |        |   |____        \\    /\\    /    /_____\\    |______|";
+        std::cout << "      /_____\\    |    ____  |____          |        |   |____        \\    /\\    /    /_____\\    |______|";
         std::cout << std::endl;
-        std::cout<< "     /       \\   |       |  |              |        |   |             \\  /  \\  /    /       \\   |    \\";
+        std::cout << "     /       \\   |       |  |              |        |   |             \\  /  \\  /    /       \\   |    \\";
         std::cout << std::endl;
-        std::cout<< "    /         \\  |_______|  |_______       |________|   |              \\/    \\/    /         \\  |     \\" ;
+        std::cout << "    /         \\  |_______|  |_______       |________|   |              \\/    \\/    /         \\  |     \\";
 
         std::cout << std::endl;
         std::cout << std::endl;
         std::cout << std::endl;
         std::cout << std::endl;
+
+        couleur("0");
         
 }
 
@@ -49,6 +55,7 @@ void Playground::printPG(Player* p1, Player *p2){
         std::cout << std::endl;
 
         //affichage des infos du jeu 
+        
         
         std::cout << "Joueur 1 : " << std::endl;
 
@@ -82,47 +89,77 @@ void Playground::printPG(Player* p1, Player *p2){
         // faire un vecteur de matrices d'affichage des unités
 
 
+        
+        couleur("36");
 
         //bases
-        std::cout << " ___    ___                                                                                                               ___    ___";
-        std::cout << std::endl;
-        std::cout << "|   |  |   |                                                                                                             |   |  |   |" ;
-        std::cout << std::endl;
-        std::cout << "|   |__|   |_____________________________________________________________________________________________________________|   |__|   |" ;
-        std::cout << std::endl;
+        std::cout << " ___    ___                                                                                                               ___    ___\n";
+        //std::cout << std::endl;
+        std::cout <<  "|   |  |   |                                                                                                             |   |  |   |\n" ;
+        //std::cout << std::endl;
+        std::cout <<  "|   |__|   |_____________________________________________________________________________________________________________|   |__|   |\n" ;
+        //std::cout << std::endl;
 
 
 
         std::cout << "|          |";
         //ligne du dessus
         for (int i = 0; i < 11; i++){
-                std::cout << "          |";
+               std::cout << "          |";
         }
         //std::cout << "|          |";
+        std::cout <<"\n";
+        //std::cout << std::endl;
 
-        std::cout << std::endl;
+        couleur("0"); //reinitialise la couleur
         
         //if case non vide
         //nom de l'entité i
         for (int i = 0; i <= 12; i++){
-                        std::cout << "|";
-                        if (!this->isFree(i)) {
-
+                couleur("36");
+                std::cout << "|";
+                couleur("0");
+                if (!this->isFree(i)) {
+                        if( ((pg[i]->getOwner() == p1) && (p1->isLeft())) ||
+                                ((pg[i]->getOwner() == p2) && (p2->isLeft())) )
+                        {
+                                couleur("31"); //rouge
                                 print10(pg[i]->m_name);
-                        } else {
-
-                                print10(" ");
+                                couleur("0");
                         }
-                        //chaque entité (unité ou base) a un symbole dédié qu'on déterminera
+                        else {
+                                couleur("34"); //bleu
+                                print10(pg[i]->m_name);
+                                couleur("0");
+                        }
+                                
+                } else {
+
+                        print10(" ");
+                }
+                //chaque entité (unité ou base) a un symbole dédié qu'on déterminera
         }
         std::cout << std::endl;
 
         //HP de l'entité i
         for (int i = 0; i <= 12; i++){
+                couleur("36");
                 std::cout << "|";
+                couleur("0");
                 if (!this->isFree(i)) { 
-                
-                        print10( std::to_string(pg[i]->getHP()) ) ;
+
+                        if( ((pg[i]->getOwner() == p1) && (p1->isLeft())) ||
+                                ((pg[i]->getOwner() == p2) && (p2->isLeft())) )
+                        {
+                                couleur("31"); //rouge
+                                print10( std::to_string(pg[i]->getHP()) ) ;
+                                couleur("0");
+                        }
+                        else {
+                                couleur("34"); //bleu
+                                print10( std::to_string(pg[i]->getHP()) ) ;
+                                couleur("0");
+                        }
                         
                 } else {
 
@@ -136,11 +173,26 @@ void Playground::printPG(Player* p1, Player *p2){
                 
                 for (int i = 0; i <= 12; i++) {
 
+                        couleur("36");
                         std::cout << "|";
+                        couleur("0");
 
                         if (!this->isFree(i)) {
 
-                             std::cout << pg[i]->symbol[j];  // Le bug venait du fait que yavait symbol dans Entite.h et Units.h et que le tableau etait de dim 2
+                                if( ((pg[i]->getOwner() == p1) && (p1->isLeft())) ||
+                                ((pg[i]->getOwner() == p2) && (p2->isLeft())) )
+                                {       
+                                        couleur("31"); //rouge
+                                        print10( pg[i]->symbol[j] ) ;
+                                        couleur("0");
+                                }
+                                else {
+                                        couleur("34"); //bleu
+                                        print10( pg[i]->symbol[j] ) ;
+                                        couleur("0");
+                                }
+
+                             //std::cout << pg[i]->symbol[j];  // Le bug venait du fait que yavait symbol dans Entite.h et Units.h et que le tableau etait de dim 2
 
                         } else {
                                 print10(" ");
@@ -150,7 +202,7 @@ void Playground::printPG(Player* p1, Player *p2){
                 std::cout << std::endl;
         }
         
-
+        couleur("36");
         //Actions de l'entité i
         for (int i = 0; i <= 11; i++){
                 std::cout << "|__________";
@@ -158,6 +210,7 @@ void Playground::printPG(Player* p1, Player *p2){
                 
         }
         std::cout << "|" << std::endl;
+        couleur("0");
 
 
 
