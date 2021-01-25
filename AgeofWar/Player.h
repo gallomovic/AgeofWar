@@ -2,6 +2,7 @@
 #define DEF_PLAYER
 #include <iostream>
 #include <vector>
+#include <algorithm>
 
 #include "Playground.h"
 #include "Units.h"
@@ -25,6 +26,8 @@ public:
 
     void addUnit(Playground*,Units*,int); /* ajoute l'unite passée en paramètre sur le Playground et dans le vecteur d'unités du joueur
                                           int donne la position où ajouter (-1 si non paramétré et donc la premiere case de gauche ou droite) */
+
+    void sortVectorUnit();
 
     int getGolds() {return m_golds;}
     void giveGolds(int i) { this->m_golds += i; }

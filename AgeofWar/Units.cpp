@@ -34,6 +34,7 @@ void Units::move(Playground *p) {
 		if (p->isFree(i+1) &&  i<11) {
 			p->pg[i+1] = this;
 			p->pg[i] = NULL;
+			this->setPos(i+1);
 		} else {
 			std::cerr << "Move failed";
 		}
@@ -41,6 +42,7 @@ void Units::move(Playground *p) {
 		if (p->isFree(i-1) && i>1) {
 			p->pg[i-1] = this;
 			p->pg[i] = NULL;
+			this->setPos(i-1);
 		} else {
 			std::cerr << "Move failed";
 		}
@@ -62,7 +64,7 @@ int Units::getPosition(Playground *p) {
 
 Entite* Units::canAttack(Playground *p) {
 
-	int i = this->getPosition(p);
+	int i = this->getPos();
 	int n= 0;
 
 	if (this->m_owner->isLeft()) {

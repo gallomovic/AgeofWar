@@ -18,6 +18,8 @@ protected:
 	int m_price;
 	int m_portee;
 
+	int m_pos;
+
 
 	bool A1 = false; //a fait son action 1, pas besoin pour action 2 et 3
 
@@ -39,8 +41,10 @@ public:
 	virtual void attack(Entite*) const; //Attaque sur une Entite (PlayerBase) => Inutile pour l'instant car PlayerBase est de type Units
 	virtual void attack(Playground*,Units*) const;  // Attaque la cible passée en paramètre, la cible est retirée après l'attaque si elle est dead
 
-	virtual Entite* canAttack(Playground*);  // Renvoie
+	virtual Entite* canAttack(Playground*);  // Renvoie la première unité attaquable
 
+	int getPos() { return m_pos; }
+	void setPos(int p) { m_pos=p; }
 
 	void move(Playground*);  // déplace l'unité d'1 case
 

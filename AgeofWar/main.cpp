@@ -1,12 +1,16 @@
 #include <iostream>
-#include<string> // std::stoi in C++11
-//#include<cstdlib> // use std::strtol in C++03
+#include<string> 
+// std::stoi in C++11
+//#include<cstdlib> 
+// use std::strtol in C++03
 #include "Soldier.h"
 #include "SuperSoldier.h"
 #include "Catapult.h"
 #include "Archer.h"
 #include "Player.h"
 #include "PlayerBase.h"
+
+#include "Playturn.cpp"
 
 int main() {
 
@@ -30,7 +34,7 @@ int main() {
 	Soldier *a = new Soldier();
 	Soldier *s = new Soldier();
 
-	std::cout << "TEST :" << a->getSymbol(0);
+	//std::cout << "TEST :" << a->getSymbol(0);
 
 	p1->addUnit(p,a,-1);
 	p2->addUnit(p,s,-1);
