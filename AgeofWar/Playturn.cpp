@@ -26,11 +26,23 @@ void achatUnit (Playground* p, Player *pl) {
           ok = false;
           std::cin >> choice;
 
-                switch (choice) {
-                        case 1 : //CHECKER LE PRIX ET LE SOUSTRAIRE
-                        pl->addUnit(p,new Soldier(),-1); ok=true; break;
-                        case 2 : pl->addUnit(p,new Archer(),-1); ok=true; break;
-                        case 3 : pl->addUnit(p,new Catapult(),-1); ok=true; break;
+                switch (choice) { //CHECKER LE PRIX ET LE SOUSTRAIRE
+                        case 1 : if (pl->getGolds() >= 10){
+                                        pl->addUnit(p,new Soldier(),-1); ok=true; break;
+                                } else {
+                                        std::cout << "Not enough gold to buy a soldier"; break;
+                                }
+                        
+                        case 2 : if (pl->getGolds() >=12){
+                                        pl->addUnit(p,new Archer(),-1); ok=true; break;
+                                } else {
+                                        std::cout << "Not enough gold to buy an archer"; break;
+                                }
+                        case 3 : if (pl->getGolds() >=20){
+                                        pl->addUnit(p,new Catapult(),-1); ok=true; break;
+                                } else {
+                                        std::cout << "Not enough gold to buy a catapult"; break;
+                                }
                         default : std::cout << "Please enter a valid value (1, 2 or 3)" << std::endl;
                 }
 

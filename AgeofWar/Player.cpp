@@ -15,6 +15,10 @@ Player::Player (bool i) : m_isLeft(i) , m_golds(10) {
 
 Player::~Player() {}
 
+void Player::setGolds(int value){
+    m_golds = value;
+}
+
 void Player::addUnit(Playground *p, Units *u, int pos = -1) {
 
     if (pos!=-1) { //Cas unique de la promotion soldat -> supersoldat

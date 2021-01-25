@@ -29,6 +29,8 @@ public:
 
     void sortVectorUnit();
 
+    void setGolds(int value);
+
     int getGolds() {return m_golds;}
     void giveGolds(int i) { this->m_golds += i; }
 
