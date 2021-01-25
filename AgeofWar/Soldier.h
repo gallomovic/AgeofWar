@@ -16,7 +16,7 @@ private:
 
 public:
 	
-	Soldier();
+	Soldier(bool isLeft);
 	~Soldier();
 
 	void attack(Playground*,Entite*);

@@ -10,7 +10,7 @@
 class Archer : public Units {
 
 public:
-	Archer();
+	Archer(bool isLeft);
 	~Archer();
 
 	//bool canAttack();

@@ -28,18 +28,18 @@ void achatUnit (Playground* p, Player *pl) {
 
                 switch (choice) { //CHECKER LE PRIX ET LE SOUSTRAIRE
                         case 1 : if (pl->getGolds() >= 10){
-                                        pl->addUnit(p,new Soldier(),-1); ok=true; break;
+                                        pl->setGolds((pl->getGolds())-10); pl->addUnit(p,new Soldier(pl->isLeft()),-1); ok=true; break;
                                 } else {
                                         std::cout << "Not enough gold to buy a soldier"; break;
                                 }
                         
                         case 2 : if (pl->getGolds() >=12){
-                                        pl->addUnit(p,new Archer(),-1); ok=true; break;
+                                        pl->setGolds((pl->getGolds())-12); pl->addUnit(p,new Archer(pl->isLeft()),-1); ok=true; break;
                                 } else {
                                         std::cout << "Not enough gold to buy an archer"; break;
                                 }
                         case 3 : if (pl->getGolds() >=20){
-                                        pl->addUnit(p,new Catapult(),-1); ok=true; break;
+                                        pl->setGolds((pl->getGolds())-20); pl->addUnit(p,new Catapult(pl->isLeft()),-1); ok=true; break;
                                 } else {
                                         std::cout << "Not enough gold to buy a catapult"; break;
                                 }
@@ -48,7 +48,8 @@ void achatUnit (Playground* p, Player *pl) {
 
           } while (!ok);
         
-        } else {
+        } 
+        else {
 
                 std::cout << "Player can't buy. Continuing to next turn." << std::endl;
 

@@ -17,7 +17,7 @@ int main() {
 
 	Playground *p = new Playground();
 
-	p->printlogo();	//afichage du logo age of war seulement au début
+	p->printlogo();	//affichage du logo age of war seulement au début
 
 	Player *p1 = new Player(true);
 	Player *p2 = new Player(false);
@@ -31,8 +31,8 @@ int main() {
 
 	p->printPG(p1,p2);
 
-	Soldier *a = new Soldier();
-	Soldier *s = new Soldier();
+	Soldier *a = new Soldier(p1->isLeft());
+	Soldier *s = new Soldier(p2->isLeft());
 
 	//std::cout << "TEST :" << a->getSymbol(0);
 
