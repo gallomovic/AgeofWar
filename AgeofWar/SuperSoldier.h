@@ -14,8 +14,6 @@ public:
 	SuperSoldier(int);
 	~SuperSoldier();
 
-	void show();
-
 };
 
 #endif

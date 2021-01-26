@@ -47,12 +47,6 @@ void Catapult::attack(Playground *p,Units *cible) {
 	}
 }
 
-void Catapult::show() {
-
-	std::cout << "0==[]\n   o o";
-
-}
-
 void Catapult::action2(Playground* p) {
 	int i = p->pg.size(); //Lignes inutiles, contourner -Werror : unused-variable
 	i--;

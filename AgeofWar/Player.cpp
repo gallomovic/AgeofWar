@@ -11,6 +11,7 @@ Player::Player (bool i) : m_isLeft(i) , m_golds(10) {
         p->pg[p->pg.size()-1] = pl;
     }
 */
+    if (i) { m_name = "Player1"; } else { m_name = "Player2"; }
 }
 
 Player::~Player() {}
@@ -31,12 +32,13 @@ void Player::addUnit(Playground *p, Units *u, int pos) {
         return;
     }
 
-    if (this->isLeft()) {
-        p->pg[1] = u;
-        u->setPos(1);
+    if (this->isLeft()) {  //On considère que la case de la base est libre, la verification est faite en amont dans Playturn
+        p->pg[0] = u;
+        u->setPos(0);
     } else {
-        p->pg[p->pg.size()-2] = u;
-        u->setPos(p->pg.size()-2);
+        int a = p->pg.size()-1;
+        p->pg[a] = u;
+        u->setPos(a);
     }
 
     this->m_PlayerUnits.push_back(u);

@@ -70,9 +70,9 @@ void Playground::printPG(Player* p1, Player *p2){
         std::cout << "Joueur 1 : " << std::endl;
 
 
-        std::cout << "Points de vie de la base :" << this->PlayerBaseL->getHP() << std::endl;
+        std::cout << "Points de vie de la base : " << this->PlayerBaseL->getHP() << std::endl;
 
-        std::cout << "Nombre de pièces :" << p1->getGolds() << std::endl;
+        std::cout << "Nombre de pièces : " << p1->getGolds() << std::endl;
 
         couleur("0");
        
@@ -85,9 +85,9 @@ void Playground::printPG(Player* p1, Player *p2){
 
         std::cout << "Joueur 2 : " << std::endl;
 
-        std::cout << "Points de vie de la base :" << this->PlayerBaseR->getHP() << std::endl;
+        std::cout << "Points de vie de la base : " << this->PlayerBaseR->getHP() << std::endl;
 
-        std::cout << "Nombre de pièces :" << p2->getGolds() << std::endl;
+        std::cout << "Nombre de pièces : " << p2->getGolds() << std::endl;
 
         couleur("0");
 
@@ -128,7 +128,7 @@ void Playground::printPG(Player* p1, Player *p2){
         
         
         //nom de l'entité i
-        for (int i = 0; i <= 12; i++){
+        for (int i = 0; i < 12; i++){
                 couleur("36");
                 couleur("1");
                 std::cout << "|";
@@ -155,10 +155,10 @@ void Playground::printPG(Player* p1, Player *p2){
                 }
                 //chaque entité (unité ou base) a un symbole dédié qu'on déterminera
         }
-        std::cout << std::endl;
+        std::cout << "|" << std::endl;
 
         //HP de l'entité i
-        for (int i = 0; i <= 12; i++){
+        for (int i = 0; i < 12; i++){
                 couleur("36");
                 couleur("1");
                 std::cout << "|";
@@ -184,12 +184,12 @@ void Playground::printPG(Player* p1, Player *p2){
                         print10(" ");
                 }
         }
-        std::cout << std::endl;
+        std::cout << "|" << std::endl;
 
         //symbole de l'entité i
         for(int j=0; j<4; j++) {      // Affichage par ligne
                 
-                for (int i = 0; i <= 12; i++) {
+                for (int i = 0; i < 12; i++) {
 
                         couleur("36");
                         couleur("1");
@@ -219,7 +219,7 @@ void Playground::printPG(Player* p1, Player *p2){
                         }
 
                 }
-                std::cout << std::endl;
+                std::cout << "|" << std::endl;
         }
         
         couleur("36");

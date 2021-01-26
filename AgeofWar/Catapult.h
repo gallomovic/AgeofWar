@@ -19,7 +19,6 @@ public:
 	void attack(Playground*,Units*);
 	void action2(Playground*);
 	void action3(Playground*);
-	void show();
 
 };
 

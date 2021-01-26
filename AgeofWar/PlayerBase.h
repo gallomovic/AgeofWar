@@ -16,7 +16,6 @@ public:
     PlayerBase();
     ~PlayerBase();
 
-    void show();
 
 };
 

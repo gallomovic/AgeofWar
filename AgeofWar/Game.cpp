@@ -15,8 +15,8 @@ Game::Game() {
 	Player *p2 = new Player(false);
 
     this->m_P = p;
-    this->m_PR = p1;
-    this->m_PL = p2;
+    this->m_PL = p1;
+    this->m_PR = p2;
 
 }
 
@@ -48,15 +48,12 @@ void Game::play() {
     do {
 
         std::cout << "               Turn Number : " << nbTours << "/200" << std::endl << std::endl;
-
         
-        this->m_PL->giveGolds(8);
-        Playturn(this->m_P, this->m_PL);
+        Playturn(this->m_P, this->m_PL, nbTours);
 
         this->m_P->printPG(this->m_PL,this->m_PR);
 
-        this->m_PL->giveGolds(8);
-        Playturn(this->m_P, this->m_PR);
+        Playturn(this->m_P, this->m_PR, nbTours);
 
         this->m_P->printPG(this->m_PL,this->m_PR);
 
@@ -65,6 +62,8 @@ void Game::play() {
             std::cout << "  Turn Number Limit reached. Game Over..." << std::endl;
             break;
         }
+
+        std::cout <<  std::endl << "__________________________________________________________________________________________________" << std::endl << std::endl;
 
     } while (!this->win());
 

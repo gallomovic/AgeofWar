@@ -52,7 +52,11 @@ void achatUnit (Playground* p, Player *pl) {
         }
 }
 
-void Playturn(Playground* p, Player *pl) {
+void Playturn(Playground* p, Player *pl, int n) {
+
+        std::cout << "          " << pl->getName() << " turn : " << std::endl;
+
+        if (n!=1) { pl->giveGolds(8); }
 
         pl->sortVectorUnit();
         
@@ -68,7 +72,11 @@ void Playturn(Playground* p, Player *pl) {
                 pl->getUnits().at(i)->action3(p);
         }
 
-        achatUnit(p,pl);
+        if (pl->getGolds()>=10 && ( (pl->isLeft() && p->isFree(0)) || (!pl->isLeft() && p->isFree(11)) ) ) {
+                achatUnit(p,pl);
+        } else {
+                std::cout << "You can't buy... Skipping buying phase..." << std::endl;
+        }
 }
 
 

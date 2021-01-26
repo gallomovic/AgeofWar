@@ -16,7 +16,7 @@ void Units::attack (Playground* p, Units *cible) const {
 
 	cible->m_hp -= this->m_ap;
 
-	std::cout << this->m_name << " at " << this->getPos() << ": 'Attacking " << cible->m_name << " at " << cible->getPos() << " (" <<cible->getHP() << " HP left) !'" << std::endl;
+	std::cout << this->m_name << " at " << this->getPos()+1 << ": 'Attacking " << cible->m_name << " at " << cible->getPos()+1 << " (" << cible->getHP() << " HP left) !'" << std::endl;
 
 	if (cible->isDead()){
 
@@ -42,16 +42,16 @@ void Units::move(Playground *p) {
 			this->setPos(i+1);
 			std::cout << this->m_name << " at " << i+1 << ": Moving to " << i+2 << std::endl;
 		} else {
-			std::cerr << "Move failed";
+			//std::cerr << "Move failed";
 		}
 	} else {					//Unité du joueur droit
-		if (p->isFree(i-1) && i>2) {
+		if (p->isFree(i-1) && i>1) {
 			p->pg[i-1] = this;
 			p->pg[i] = NULL;
 			this->setPos(i-1);
 			std::cout << this->m_name << " at " << i+1 << ": Moving to " << i << std::endl;
 		} else {
-			std::cerr << "Move failed";
+			//std::cerr << "Move failed";
 		}
 	}
 }
@@ -72,32 +72,32 @@ int Units::getPosition(Playground *p) {
 Units* Units::canAttack(Playground *p) {
 
 	int i = this->getPos();
-	int n= 0;
+	int n = 1;
 
 	if (this->m_owner->isLeft()) {
 
-		while ( i+n<(int)p->pg.size()-1 && n<this->m_portee) {
+		while ( i+n<(int)p->pg.size()-1 && n<=this->m_portee) {
 
-			if (p->pg[i+1+n] != NULL && p->pg[i+1+n]->getOwner() != this->m_owner) {
-				return p->pg[i+1+n];
+			if (p->pg[i+n] != NULL && p->pg[i+n]->getOwner() != this->m_owner) {
+				return p->pg[i+n];
 			}
-			n++;
-
+			
 			if (i+n==11) { return p->PlayerBaseR; } //Pas d'unité trouvée on check si on peut attaquer la base
+			n++;
 		}
 
 
 
 	} else {
 
-		while ( i-n>0 && n<this->m_portee) {
+		while ( i-n>=0 && n<=this->m_portee) {
 
-			if (p->pg[i-1-n] != NULL && p->pg[i-1-n]->getOwner() != this->m_owner) {
-				return p->pg[i-1-n];
+			if (p->pg[i-n] != NULL && p->pg[i-n]->getOwner() != this->m_owner) {
+				return p->pg[i-n];
 			}
-			n++;
 
 			if (i-n==0) { return p->PlayerBaseL; } //Pas d'unité trouvée on check si on peut attaquer la base
+			n++;
 		}
 	}
 

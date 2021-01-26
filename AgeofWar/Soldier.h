@@ -19,9 +19,8 @@ public:
 	Soldier(bool isLeft);
 	~Soldier();
 
-	void attack(Playground*,Units*);
+	void attack(Playground*,Soldier*);
 	void action3(Playground*);
-	void show();
 
 };
 

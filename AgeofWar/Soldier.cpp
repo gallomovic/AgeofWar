@@ -28,21 +28,11 @@ void Soldier::promote(Playground* p) {
 	s->getOwner()->addUnit(p,s,i);
 }
 
-void Soldier::attack(Playground *p,Units *cible) {
+void Soldier::attack(Playground *p,Soldier *cible) {
 	Units::attack(p,cible);
-	if (cible->isDead() && dynamic_cast<Soldier*>(cible) != nullptr ) {
+	if (cible->isDead() ){ //&& dynamic_cast<Soldier*>(cible) != nullptr ) {
 		this->promote(p);
 	}
-}
-
-void Soldier::show(){
-
-	//  O
-    // /|\/
-    // / \.
-	
-	std::cout << "0/\nY\n^";
-		     
 }
 
 void Soldier::action3(Playground* p) {

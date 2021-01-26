@@ -26,7 +26,7 @@ public:
 
     int getHP() const { return m_hp; }
 
-    virtual void show()=0;
+    virtual void show() = 0;
 
     void setOwner(Player* p) { m_owner = p; }
     Player* getOwner() { return m_owner; }

@@ -52,7 +52,7 @@ public:
 
 	void move(Playground*);  // déplace l'unité d'1 case
 
-	//virtual void show()=0;
+	virtual void show() {}
 
 
 	int getPosition(Playground*); // retourne l'indice de la position de l'unité
