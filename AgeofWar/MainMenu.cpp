@@ -31,7 +31,7 @@ void printMM(){
     couleur("1"); //intensifie la couleur
 
 
-    std::cout << "               _    _      _      _    _    _        _    _   ______    _    _   _      _ ";
+    std::cout << "               _    _      _     _    _    _         _    _   ______    _    _   _      _ ";
     std::cout << std::endl;
     std::cout <<"               |\\  /|     /\\     |    |\\   |         |\\  /|   |         |\\   |   |      |";
     std::cout << std::endl;
@@ -59,9 +59,9 @@ void printMM(){
 
     std::cout << std::endl;
     std::cout << std::endl;
-
-    couleur("0");
 */
+    couleur("0");
+
     std::cout << "Start a new game ? (y/n) :  ";
     
 /*
