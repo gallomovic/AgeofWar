@@ -162,6 +162,7 @@ void Playground::printPG(Player* p1, Player *p2){
                 couleur("36");
                 couleur("1");
                 std::cout << "|";
+                couleur("0");
                 if (!this->isFree(i)) { 
 
                         if( ((pg[i]->getOwner() == p1) && (p1->isLeft())) ||
@@ -194,7 +195,7 @@ void Playground::printPG(Player* p1, Player *p2){
                         couleur("36");
                         couleur("1");
                         std::cout << "|";
-
+                        couleur("0");
                         if (!this->isFree(i)) {
 
                                 if( ((pg[i]->getOwner() == p1) && (p1->isLeft())) ||
@@ -231,6 +232,7 @@ void Playground::printPG(Player* p1, Player *p2){
                 
         }
         std::cout << "|" << std::endl;
+        
 
         //Num de case
         for (int i = 0; i <= 11; i++){
@@ -245,6 +247,7 @@ void Playground::printPG(Player* p1, Player *p2){
         //        std::cout << "|     ";
         //}
         
+        couleur("0");
 
         std::cout << std::endl;
         std::cout << std::endl;
