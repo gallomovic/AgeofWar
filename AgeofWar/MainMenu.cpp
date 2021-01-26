@@ -45,6 +45,7 @@ void printMM(){
     std::cout << std::endl;
     std::cout << std::endl;
 
+    /*
     couleur("33");
 
     std::cout << "                          _  _  ____  _     _   ____     _    _   _   ____    ____";
@@ -60,8 +61,8 @@ void printMM(){
     std::cout << std::endl;
 
     couleur("0");
-
-    std::cout << "Start a new game ? (y/n)";
+*/
+    std::cout << "Start a new game ? (y/n) :  ";
     
 /*
     std::string answ;
