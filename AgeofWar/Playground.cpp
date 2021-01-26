@@ -155,7 +155,10 @@ void Playground::printPG(Player* p1, Player *p2){
                 }
                 //chaque entité (unité ou base) a un symbole dédié qu'on déterminera
         }
+        couleur("36");
+        couleur("1");
         std::cout << "|" << std::endl;
+        couleur("0");
 
         //HP de l'entité i
         for (int i = 0; i < 12; i++){
@@ -185,7 +188,10 @@ void Playground::printPG(Player* p1, Player *p2){
                         print10(" ");
                 }
         }
+        couleur("36");
+        couleur("1");
         std::cout << "|" << std::endl;
+        couleur("0");
 
         //symbole de l'entité i
         for(int j=0; j<4; j++) {      // Affichage par ligne
@@ -220,7 +226,10 @@ void Playground::printPG(Player* p1, Player *p2){
                         }
 
                 }
+                couleur("36");
+                couleur("1");
                 std::cout << "|" << std::endl;
+                couleur("0");
         }
         
         couleur("36");
