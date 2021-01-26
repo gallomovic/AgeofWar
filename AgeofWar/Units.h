@@ -38,7 +38,7 @@ public:
 	void setHP(int);
 	*/
 
-	virtual void attackBase(Entite*) const; //Attaque sur une Entite (PlayerBase) => Inutile pour l'instant car PlayerBase est de type Units
+	//virtual void attack(Playground*,Entite*) const; //Attaque sur une Entite (PlayerBase) => Inutile pour l'instant car PlayerBase est de type Units
 	virtual void attack(Playground*,Units*) const;  // Attaque la cible passée en paramètre, la cible est retirée après l'attaque si elle est dead
 
 	virtual Units* canAttack(Playground*);  // Renvoie la première unité attaquable

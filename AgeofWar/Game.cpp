@@ -6,9 +6,11 @@ Game::Game() {
     Playground *p = new Playground();
     
     PlayerBase *pbl = new PlayerBase();
+    pbr->setPos(0);
     p->PlayerBaseL = pbl;
 
     PlayerBase *pbr = new PlayerBase();
+    pbr->setPos(11);
     p->PlayerBaseR = pbr;
 
 	Player *p1 = new Player(true);
@@ -25,11 +27,11 @@ Game::~Game() {}
 bool Game::win() {
 
     if (this->m_P->PlayerBaseR->getHP() <= 0) {
-        std::cout << "VICTOIRE DU JOUEUR 1 !" << std::endl;
+        std::cout << "              VICTOIRE DU JOUEUR 1 !" << std::endl << std::endl;
         return true;
     }
     if (this->m_P->PlayerBaseL->getHP() <= 0) {
-        std::cout << "VICTOIRE DU JOUEUR 2 !" << std::endl;
+        std::cout << "              VICTOIRE DU JOUEUR 2 !" << std::endl << std::endl;
         return true;
     }
     return false;
@@ -52,6 +54,8 @@ void Game::play() {
         Playturn(this->m_P, this->m_PL, nbTours);
 
         this->m_P->printPG(this->m_PL,this->m_PR);
+
+        if (this->win()) {break;}
 
         Playturn(this->m_P, this->m_PR, nbTours);
 

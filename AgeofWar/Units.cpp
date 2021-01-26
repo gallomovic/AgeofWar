@@ -6,12 +6,6 @@ Units::Units(int hp, int ap, int price, int portee, std::string name ) : Entite(
 
 Units::~Units() {}
 
-void Units::attackBase(Entite *base) const {
-
-	base->m_hp -= m_ap;
-
-}
-
 void Units::attack (Playground* p, Units *cible) const {
 
 	cible->m_hp -= this->m_ap;
@@ -20,12 +14,13 @@ void Units::attack (Playground* p, Units *cible) const {
 
 	if (cible->isDead()){
 
-		std::cout << cible->m_name << " at " << cible->getPos() << " is dead ! " << std::endl;
+		std::cout << cible->m_name << " at " << cible->getPos()+1 << " is dead ! " << std::endl;
 
 		this->m_owner->giveGolds(cible->m_price/2); // le joueur gagne la moitié du prix de l'unité tuée
 	
-		cible->getOwner()->deleteUnit(p,cible); //la cible est détruite
-		
+		if (cible->m_name!="PlayerBase") { //C'est dégeu comme OO mais j'ai pas trouvé mieux
+			cible->getOwner()->deleteUnit(p,cible); //la cible est détruite
+		}
 
 	}
 }
@@ -76,7 +71,7 @@ Units* Units::canAttack(Playground *p) {
 
 	if (this->m_owner->isLeft()) {
 
-		while ( i+n<(int)p->pg.size()-1 && n<=this->m_portee) {
+		while ( i+n<(int)p->pg.size() && n<=this->m_portee) {
 
 			if (p->pg[i+n] != NULL && p->pg[i+n]->getOwner() != this->m_owner) {
 				return p->pg[i+n];
