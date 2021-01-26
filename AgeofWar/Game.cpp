@@ -6,7 +6,7 @@ Game::Game() {
     Playground *p = new Playground();
     
     PlayerBase *pbl = new PlayerBase();
-    pbr->setPos(0);
+    pbl->setPos(0);
     p->PlayerBaseL = pbl;
 
     PlayerBase *pbr = new PlayerBase();

@@ -59,6 +59,8 @@ void Playturn(Playground* p, Player *pl, int n) {
         if (n!=1) { pl->giveGolds(8); }
 
         pl->sortVectorUnit();
+
+        //if (!pl->isLeft()) { std::reverse(pl->getUnits().begin(), pl->getUnits().end()); }
         
         for (Units* u : pl->getUnits()) {
                 u->action1(p);

@@ -22,15 +22,16 @@ Soldier::~Soldier() {}
 
 void Soldier::promote(Playground* p) {
 	SuperSoldier *s = new SuperSoldier(this->getHP());
-	int i = this->getPosition(p);
+	int i = this->getPos();
+	s->setPos(i);
 	s->setOwner(this->m_owner);
 	this->m_owner->deleteUnit(p,this);
 	s->getOwner()->addUnit(p,s,i);
 }
 
-void Soldier::attack(Playground *p,Soldier *cible) {
+void Soldier::attack(Playground *p,Units *cible) {
 	Units::attack(p,cible);
-	if (cible->isDead() ){ //&& dynamic_cast<Soldier*>(cible) != nullptr ) {
+	if (cible->isDead() && dynamic_cast<Soldier*>(cible) != nullptr ) {
 		this->promote(p);
 	}
 }

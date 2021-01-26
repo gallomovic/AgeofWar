@@ -1,6 +1,6 @@
 #include "SuperSoldier.h"
 
-SuperSoldier::SuperSoldier(int hp) : Units(hp, 4, -1, 1,"SupSoldier") {
+SuperSoldier::SuperSoldier(int hp) : Units(hp, 4, 10, 1,"SupSoldier") {
     //  O
     //\/|\/
     // / \.

@@ -64,10 +64,18 @@ void Player::deleteUnit(Playground* p, Units *u) {
 
 //Trie le vecteur Unite du joueur en fonction de la position
 void Player::sortVectorUnit() {
+    if (this->isLeft()) {
         std::sort(this->m_PlayerUnits.begin(), this->m_PlayerUnits.end(), 
                 [](Units *a, Units *b) {
                   return (a->getPos() < b->getPos());
                 }
         );
+    } else {
+        std::sort(this->m_PlayerUnits.begin(), this->m_PlayerUnits.end(), 
+                [](Units *a, Units *b) {
+                  return (a->getPos() > b->getPos());
+                }
+        );
+    }
 }
 

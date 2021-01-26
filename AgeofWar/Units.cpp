@@ -6,7 +6,7 @@ Units::Units(int hp, int ap, int price, int portee, std::string name ) : Entite(
 
 Units::~Units() {}
 
-void Units::attack (Playground* p, Units *cible) const {
+void Units::attack (Playground* p, Units *cible) {
 
 	cible->m_hp -= this->m_ap;
 

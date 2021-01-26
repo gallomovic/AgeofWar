@@ -19,7 +19,7 @@ public:
 	Soldier(bool isLeft);
 	~Soldier();
 
-	void attack(Playground*,Soldier*);
+	void attack(Playground*,Units*) ;
 	void action3(Playground*);
 
 };
