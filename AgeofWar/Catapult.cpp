@@ -10,9 +10,9 @@ Catapult::Catapult(bool isLeft) : Units(12, 6, 20, 4,"Catapult") {
 	}
 	else{
 		this->symbol[0] = "     o/   ";
-		this->symbol[1] = "    _/__    ";
-		this->symbol[2] = "   |____|   ";	
-		this->symbol[3] = "    O   O    ";
+		this->symbol[1] = "    _/__  ";
+		this->symbol[2] = "   |____| ";	
+		this->symbol[3] = "    O   O ";
 	}
 	
 }
