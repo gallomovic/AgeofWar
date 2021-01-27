@@ -16,7 +16,7 @@ void Units::attack (Playground* p, Units *cible) {
 
 		std::cout << cible->m_name << " at " << cible->getPos()+1 << " is dead ! " << std::endl;
 
-		this->m_owner->giveGolds(cible->m_price/2); // le joueur gagne la moitié du prix de l'unité tuée
+		if (cible->m_owner != this->m_owner) { this->m_owner->giveGolds(cible->m_price/2); } // le joueur gagne la moitié du prix de l'unité tuée
 	
 		if (cible->m_name!="PlayerBase") { //C'est dégeu comme OO mais j'ai pas trouvé mieux
 			cible->getOwner()->deleteUnit(p,cible); //la cible est détruite

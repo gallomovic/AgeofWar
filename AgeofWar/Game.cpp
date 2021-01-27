@@ -48,11 +48,11 @@ Game::~Game() {}
 bool Game::win() {
 
     if (this->m_P->PlayerBaseR->getHP() <= 0) {
-        std::cout << "              VICTOIRE DU JOUEUR 1 !" << std::endl << std::endl;
+        std::cout << std::endl << "              VICTOIRE DE " << this->m_PL->getName() << " !" << std::endl << std::endl;
         return true;
     }
     if (this->m_P->PlayerBaseL->getHP() <= 0) {
-        std::cout << "              VICTOIRE DU JOUEUR 2 !" << std::endl << std::endl;
+        std::cout << std::endl << "              VICTOIRE De " << this->m_PR->getName()  << " !" << std::endl << std::endl;
         return true;
     }
     return false;
@@ -80,13 +80,13 @@ void Game::play() {
 
         this->m_P->printPG(this->m_PL,this->m_PR);
 
+        if (this->win()) {break;}
+
         if (this->m_PL->getGolds()>=10 && this->m_P->isFree(0) ) {
                 this->m_PL->achatUnit(this->m_P);
         } else {
-                std::cout << "P1 can't buy... Skipping buying phase... Press Enter to continue" << std::endl;
+                std::cout << this->m_PL->getName() << " can't buy... Skipping buying phase... Press Enter to continue" << std::endl;
         }
-
-        if (this->win()) {break;}
 
         std::cin.get();
         system("clear");
@@ -97,10 +97,12 @@ void Game::play() {
 
         this->m_P->printPG(this->m_PL,this->m_PR);
 
+        if (this->win()) {break;}
+
         if (this->m_PR->getGolds()>=10 && this->m_P->isFree(11) ) {
                 this->m_PR->achatUnit(this->m_P);
         } else {
-                std::cout << "P2 can't buy... Skipping buying phase... Press Enter to continue" << std::endl;
+                std::cout << this->m_PR->getName() << " can't buy... Skipping buying phase... Press Enter to continue" << std::endl;
         }
 
         nbTours++;
@@ -113,7 +115,7 @@ void Game::play() {
         std::cin.get();
         system("clear");
 
-    } while (!this->win());
+    } while (true);
 
 
 }

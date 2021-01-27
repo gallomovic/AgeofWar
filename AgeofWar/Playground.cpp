@@ -67,27 +67,27 @@ void Playground::printPG(AbsPlayer* p1, AbsPlayer *p2){
         couleur("31");
         couleur("1");
         
-        std::cout << "Joueur 1 : " << std::endl;
+        std::cout << "  " << p1->getName() << std::endl;
 
 
-        std::cout << "Points de vie de la base : " << this->PlayerBaseL->getHP() << std::endl;
+        std::cout << " Base HP : " << this->PlayerBaseL->getHP() << std::endl;
 
-        std::cout << "Nombre de pièces : " << p1->getGolds() << std::endl;
+        std::cout << " Golds   : " << p1->getGolds() << std::endl;
 
         couleur("0");
        
         
-        std::cout << "__________________________" << std::endl;
+        std::cout << "______________________________" << std::endl;
         std::cout << std::endl;
 
         couleur("34");
         couleur("1");
 
-        std::cout << "Joueur 2 : " << std::endl;
+        std::cout << "  " << p2->getName() << std::endl;
 
-        std::cout << "Points de vie de la base : " << this->PlayerBaseR->getHP() << std::endl;
+        std::cout << " Base HP : " << this->PlayerBaseR->getHP() << std::endl;
 
-        std::cout << "Nombre de pièces : " << p2->getGolds() << std::endl;
+        std::cout << " Golds   : " << p2->getGolds() << std::endl;
 
         couleur("0");
 
@@ -114,13 +114,18 @@ void Playground::printPG(AbsPlayer* p1, AbsPlayer *p2){
         std::cout << std::endl;
 
 
+//ligne du dessus
 
-        std::cout << "| Player1  |";
-        //ligne du dessus
+        std::cout << "|";
+        print10(p1->getName());
+        std::cout << "|";
+        
         for (int i = 0; i < 10; i++){
                 std::cout << "          |";
         }
-        std::cout << "  Player2 |";
+
+        print10(p2->getName());
+        std::cout << "|";
 
         std::cout << std::endl;
 
