@@ -19,7 +19,12 @@ void achatUnit (Playground* p, Player *pl) {
 
           int choice;
           ok = false;
-          std::cin >> choice;
+          
+          while (!(std::cin >> choice)) {
+                std::cin.clear();
+                std::cin.ignore(5,'\n');
+                std::cout << "Please enter a valid value (1, 2, 3 or 4)" << std::endl;
+          }
 
                 switch (choice) { //CHECKER LE PRIX ET LE SOUSTRAIRE
                         case 1 : if (pl->getGolds() >= 10){
@@ -39,10 +44,11 @@ void achatUnit (Playground* p, Player *pl) {
                                         std::cout << "Not enough gold to buy a catapult" << std::endl; break;
                                 }
                         case 4 : ok=true; break;
-                        default : std::cout << "Please enter a valid value (1, 2 or 3)" << std::endl;
+                        default : std::cout << "Please enter a valid value (1, 2, 3 or 4)" << std::endl;
                 }
 
           } while (!ok);
+
         
         } 
         else {

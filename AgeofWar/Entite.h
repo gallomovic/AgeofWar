@@ -17,7 +17,7 @@ public:
 
     int m_hp;
     std::string m_name;
-    std::string symbol[4];
+    
 
     Entite(int,std::string);
     virtual ~Entite();
@@ -31,7 +31,7 @@ public:
     void setOwner(Player* p) { m_owner = p; }
     Player* getOwner() { return m_owner; }
 
-    std::string getSymbol(int i) { return this->symbol[i]; }
+   
 
 };
 

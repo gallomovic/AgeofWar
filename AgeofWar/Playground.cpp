@@ -209,13 +209,13 @@ void Playground::printPG(Player* p1, Player *p2){
                                 {       
                                         couleur("31"); //rouge
                                         couleur("1");
-                                        print10( pg[i]->symbol[j] ) ;
+                                        print10( pg[i]->getSymbol(j) ) ;
                                         couleur("0");
                                 }
                                 else {
                                         couleur("34"); //bleu
                                         couleur("1");
-                                        print10( pg[i]->symbol[j] ) ;
+                                        print10( pg[i]->getSymbol(j)) ;
                                         couleur("0");
                                 }
 

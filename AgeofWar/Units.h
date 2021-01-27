@@ -20,6 +20,8 @@ protected:
 
 	int m_pos;
 
+	std::string symbol[4];
+
 
 	bool A1 = false; //a fait son action 1, pas besoin pour action 2 et 3
 
@@ -56,6 +58,8 @@ public:
 
 
 	int getPosition(Playground*); // retourne l'indice de la position de l'unité
+
+	std::string getSymbol(int i) { return this->symbol[i]; }
 
 
 };
