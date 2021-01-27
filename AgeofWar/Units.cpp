@@ -35,7 +35,7 @@ void Units::move(Playground *p) {
 			p->pg[i+1] = this;
 			p->pg[i] = NULL;
 			this->setPos(i+1);
-			std::cout << this->m_name << " at " << i+1 << ": Moving to " << i+2 << std::endl;
+			std::cout << this->m_name << " at " << i+1 << ": Moving to " << i+2 << "!'" << std::endl;
 		} else {
 			//std::cerr << "Move failed";
 		}
@@ -44,7 +44,7 @@ void Units::move(Playground *p) {
 			p->pg[i-1] = this;
 			p->pg[i] = NULL;
 			this->setPos(i-1);
-			std::cout << this->m_name << " at " << i+1 << ": Moving to " << i << std::endl;
+			std::cout << this->m_name << " at " << i+1 << ": 'Moving to " << i << "!'" << std::endl;
 		} else {
 			//std::cerr << "Move failed";
 		}

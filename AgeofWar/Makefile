@@ -1,6 +1,6 @@
 CXX=g++
 CXXFLAGS=-Wall -Wextra -Werror
-SOURCES=Archer.o Catapult.o Entite.o Player.o Units.o Playground.o Soldier.o SuperSoldier.o PlayerBase.o MainMenu.o Playturn.o Game.o main.o
+SOURCES=Archer.o Catapult.o Entite.o AbsPlayer.o Computer.o Player.o Units.o Playground.o Soldier.o SuperSoldier.o PlayerBase.o MainMenu.o Playturn.o Game.o main.o
 
 %.o: %.cpp
 	$(CXX) $(CXXFLAGS) $< -c -o $@

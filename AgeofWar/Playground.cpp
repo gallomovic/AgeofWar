@@ -56,7 +56,7 @@ void Playground::printlogo(){
         
 }
 
-void Playground::printPG(Player* p1, Player *p2){
+void Playground::printPG(AbsPlayer* p1, AbsPlayer *p2){
 
 
         std::cout << std::endl;

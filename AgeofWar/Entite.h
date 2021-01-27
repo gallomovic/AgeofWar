@@ -3,15 +3,15 @@
 #include <iostream>
 #include <string>
 
-#include "Player.h"
-class Player;
+#include "AbsPlayer.h"
+class AbsPlayer;
 
 class Entite
 {
 protected:
 
     
-    Player* m_owner;
+    AbsPlayer* m_owner;
 
 public:
 
@@ -28,8 +28,8 @@ public:
 
     virtual void show() = 0;
 
-    void setOwner(Player* p) { m_owner = p; }
-    Player* getOwner() { return m_owner; }
+    void setOwner(AbsPlayer* p) { m_owner = p; }
+    AbsPlayer* getOwner() { return m_owner; }
 
    
 

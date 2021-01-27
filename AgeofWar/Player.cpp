@@ -1,81 +1,64 @@
 #include "Player.h"
+#include "Soldier.h"
+#include "Archer.h"
+#include "Catapult.h"
 
+Player::Player (bool i) : AbsPlayer(i) {
 
-Player::Player (bool i) : m_isLeft(i) , m_golds(10) {
-/*
-    if (i) {
-        PlayerBase *pl = new PlayerBase(this);
-        p->pg[0] = pl;
-    } else {
-        PlayerBase *pl = new PlayerBase(this);
-        p->pg[p->pg.size()-1] = pl;
-    }
-*/
-    if (i) { m_name = "Player1"; } else { m_name = "Player2"; }
+        if (i) { m_name = "Player1"; } else { m_name = "Player2"; }
+        
 }
 
 Player::~Player() {}
 
-void Player::setGolds(int value){
-    m_golds = value;
-}
+//Achat d'unité pour le joueur
+void Player::achatUnit (Playground* p) {
 
-void Player::addUnit(Playground *p, Units *u, int pos) {
+        if ((this->isLeft() && p->isFree(0)) || (!this->isLeft() && p->isFree(11)) ) {
 
-    if (pos!=-1) { //Cas unique de la promotion soldat -> supersoldat
-        if (p->isFree(pos)) {
-            p->pg[pos] = u;
-            u->setPos(pos);
-            this->m_PlayerUnits.push_back(u);
-            u->setOwner(this);
+          std::cout << "What do you want to buy ?     1)Soldier (10g)      2)Archer (12g)          3)Catapult (20g)     4)Skip" << std::endl;
+
+          bool ok;
+          
+          do {
+
+          int choice;
+          ok = false;
+          
+          while (!(std::cin >> choice)) {
+                std::cin.clear();
+                std::cin.ignore(5,'\n');
+                std::cout << "Please enter a valid value (1, 2, 3 or 4)" << std::endl;
+          }
+
+                switch (choice) { //CHECKER LE PRIX ET LE SOUSTRAIRE
+                        case 1 : if (this->getGolds() >= 10){
+                                        this->setGolds((this->getGolds())-10); this->addUnit(p,new Soldier(this->isLeft())); ok=true; break;
+                                } else {
+                                        std::cout << "Not enough gold to buy a soldier" << std::endl; break;
+                                }
+                        
+                        case 2 : if (this->getGolds() >=12){
+                                        this->setGolds((this->getGolds())-12); this->addUnit(p,new Archer(this->isLeft())); ok=true; break;
+                                } else {
+                                        std::cout << "Not enough gold to buy an archer" << std::endl; break;
+                                }
+                        case 3 : if (this->getGolds() >=20){
+                                        this->setGolds((this->getGolds())-20); this->addUnit(p,new Catapult(this->isLeft())); ok=true; break;
+                                } else {
+                                        std::cout << "Not enough gold to buy a catapult" << std::endl; break;
+                                }
+                        case 4 : ok=true; break;
+                        default : std::cout << "Please enter a valid value (1, 2, 3 or 4)" << std::endl;
+                }
+
+          } while (!ok);
+
+        
         } 
-        return;
-    }
+        else {
 
-    if (this->isLeft()) {  //On considère que la case de la base est libre, la verification est faite en amont dans Playturn
-        p->pg[0] = u;
-        u->setPos(0);
-    } else {
-        int a = p->pg.size()-1;
-        p->pg[a] = u;
-        u->setPos(a);
-    }
-
-    this->m_PlayerUnits.push_back(u);
-    u->setOwner(this);
-}
-
-void Player::deleteUnit(Playground* p, Units *u) {
-
-    int i = u->getPos();
-    p->pg[i] = NULL;
-
-    for (int i = 0; i<(int)this->m_PlayerUnits.size() ; i++) {
-        if (this->m_PlayerUnits.at(i) == u) {
-            this->m_PlayerUnits.erase(this->m_PlayerUnits.begin()+i);
+                std::cout << "Player can't buy ";
+                system("read");
         }
-    }
-
-
-   // delete u ; 
-
 }
-
-
-//Trie le vecteur Unite du joueur en fonction de la position
-void Player::sortVectorUnit() {
-    if (this->isLeft()) {
-        std::sort(this->m_PlayerUnits.begin(), this->m_PlayerUnits.end(), 
-                [](Units *a, Units *b) {
-                  return (a->getPos() < b->getPos());
-                }
-        );
-    } else {
-        std::sort(this->m_PlayerUnits.begin(), this->m_PlayerUnits.end(), 
-                [](Units *a, Units *b) {
-                  return (a->getPos() > b->getPos());
-                }
-        );
-    }
-}
-

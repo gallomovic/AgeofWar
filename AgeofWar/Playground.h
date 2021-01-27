@@ -6,9 +6,9 @@
 #include <vector>
 
 #include "Units.h"
-#include "Player.h"
+#include "AbsPlayer.h"
 
-class Player;
+class AbsPlayer;
 class Units;
 
 class Playground
@@ -27,7 +27,7 @@ public:
         //delete this;
     };
 
-    void printPG(Player*,Player*);
+    void printPG(AbsPlayer*,AbsPlayer*);
     void printlogo();
     
     bool isFree(int); //Renvoie true si la position est vide

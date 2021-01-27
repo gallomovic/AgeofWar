@@ -1,5 +1,5 @@
 #include <iostream>
-#include<string> 
+#include <string> 
 // std::stoi in C++11
 //#include<cstdlib> 
 // use std::strtol in C++03
@@ -8,7 +8,7 @@
 #include "SuperSoldier.h"
 #include "Catapult.h"
 #include "Archer.h"
-#include "Player.h"
+#include "AbsPlayer.h"
 #include "PlayerBase.h"
 
 
@@ -19,23 +19,38 @@
 int main() {
 
 
+	begin:
+
+	system("clear");
+
 	printMM();
 
 	std::string answ;
-    std::cin >> answ ;
+    std::cin >> answ;
     if (answ == "y"){
         
-		Game *G = new Game();
+		std::cout << std::endl << "Choose game mode: 	1) P1 vs P2 	2) P1 vs COM 	3) COM vs COM	" << std::endl;
+		int i;
+
+		while (!(std::cin >> i) || i>3 || i<1) {
+                std::cin.clear();
+                std::cin.ignore(4,'\n');
+                std::cout << "Please enter a valid value (1, 2 or 3)" << std::endl;
+        }
+
+		Game *G = new Game(i);
 
 		G->play();
 
     }
     else if (answ == "n"){
-        //load game
+
+        return 0;
+
     }
     else { std::cout << "Erreur"; }
 
-	return 0;
+	goto begin;
 }
 
 /*
