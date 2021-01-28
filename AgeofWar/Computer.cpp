@@ -16,24 +16,22 @@ void Computer::achatUnit (Playground* p) {
     if (this->getGolds() >= 20){
         this->setGolds((this->getGolds())-20); 
         this->addUnit(p,new Catapult(this->isLeft()));
-        std::cout << this->getName() << " has purchased a brand new catapult. Press Enter to continue.. " << std::endl;
+        std::cout << this->getName() << " has purchased a brand new catapult." << std::endl;
     } else {
         if (this->getGolds() >=12){
             this->setGolds((this->getGolds())-12); 
             this->addUnit(p,new Archer(this->isLeft()));
-            std::cout << this->getName() << " has purchased a brand new Archer. Press Enter to continue.. " << std::endl;
+            std::cout << this->getName() << " has purchased a brand new Archer." << std::endl;
         } else {
             if (this->getGolds() >=10){
                 this->setGolds((this->getGolds())-10);
                 this->addUnit(p,new Soldier(this->isLeft()));
-                std::cout << this->getName() << " has purchased a brand new Soldier. Press Enter to continue.. " << std::endl;
+                std::cout << this->getName() << " has purchased a brand new Soldier." << std::endl;
             } else {
-                std::cout << this->getName() << " is too poor to buy anything. Press Enter to continue.." << std::endl;
+                std::cout << this->getName() << " is too poor to buy anything." << std::endl;
             }
         }
     }
-    
-    std::cin.get();
 }
         
                         

@@ -59,12 +59,12 @@ bool Game::win() {
         return true;
     }
     if (this->m_P->PlayerBaseL->getHP() <= 0) {
-        std::cout << std::endl << "              VICTOIRE De " << this->m_PR->getName()  << " !" << std::endl << std::endl;
+        std::cout << std::endl << "              VICTOIRE DE " << this->m_PR->getName()  << " !" << std::endl << std::endl;
         return true;
     }
     return false;
 
-    system("pause");
+    std::cin.get();
 
 }
 
@@ -75,7 +75,7 @@ void Game::play() {
         system("clear");
 
 
-        std::cout << std::endl << "                       Turn Number : " << nbTurns << "/200" << std::endl << std::endl;
+        std::cout << std::endl << "                                 Turn Number : " << nbTurns << "/200" << std::endl << std::endl;
         
         Playturn(this->m_P, this->m_PL, nbTurns);
 
@@ -84,15 +84,28 @@ void Game::play() {
         if (this->win()) {break;}
 
         if (this->m_PL->getGolds()>=10 && this->m_P->isFree(0) ) {
-                this->m_PL->achatUnit(this->m_P);
+            this->m_PL->achatUnit(this->m_P);
+            std::cout << " Press Enter to continue" << std::endl;
         } else {
-                std::cout << this->m_PL->getName() << " can't buy... Skipping buying phase... Press Enter to continue" << std::endl;
+            std::cout << this->m_PL->getName() << " can't buy... Skipping buying phase... \n Press Enter to continue" << std::endl;
         }
 
-        std::cin.get();
+        char q;
+
+        std::cin.clear();
+        std::cin.ignore(5,'\n');
+        std::cin.get(q);
+        
+        while (!(q =='\n')) {
+            std::cin.clear();
+            std::cin.ignore(5,'\n');
+            std::cout << "Please press Enter" << std::endl;
+            std::cin.get(q);
+        }
+
         system("clear");
 
-        std::cout << std::endl << "                       Turn Number : " << nbTurns << "/200" << std::endl << std::endl;
+        std::cout << std::endl << "                                 Turn Number : " << nbTurns << "/200" << std::endl << std::endl;
 
         Playturn(this->m_P, this->m_PR, nbTurns);
 
@@ -101,28 +114,33 @@ void Game::play() {
         if (this->win()) {break;}
 
         if (this->m_PR->getGolds()>=10 && this->m_P->isFree(11) ) {
-                this->m_PR->achatUnit(this->m_P);
+            this->m_PR->achatUnit(this->m_P);
         } else {
-                std::cout << this->m_PR->getName() << " can't buy... Skipping buying phase... Press Enter to continue" << std::endl;
+            std::cout << this->m_PR->getName() << " can't buy... Skipping buying phase... " << std::endl;
         }
 
         nbTurns++;
 
         if (nbTurns>200) {
-            std::cout << "  Turn Number Limit reached. Game Over..." << std::endl;
+            std::cout << std::endl << "  Turn Number Limit reached. Game Over..." << std::endl;
             break;
         }
 
-
-        std::cin.get();
-        system("clear");
         
-
-        char q;
-        std::cout << "If you want to end the game press 'q', to save game press 's' " << std::endl;
-        std::cin >> q;
+        std::cout << " Press Enter to continue, enter 'q' to end the game , enter 's' to save game" << std::endl;
+        
+        std::cin.clear();
+        std::cin.ignore(5,'\n');
+        std::cin.get(q);
+        
+        while (!(q =='\n' || q =='q' || q =='s')) {
+                std::cin.clear();
+                std::cin.ignore(5,'\n');
+                std::cout << "Please enter a valid value ('', 'q', or 's')" << std::endl;
+                std::cin.get(q);
+        }
+        
         if (q == 'q'){
-            std::cout << "Ending game ..." << std::endl;
             break;
         } 
         if (q == 's'){
@@ -132,7 +150,6 @@ void Game::play() {
 
 
     } while (true);
-
 
 }
 
@@ -171,12 +188,16 @@ void Game::save() {
     sf.close();
 }
 
-void Game::load() {
+bool Game::load() {
 
     std::string line;
     std::ifstream lf ("save.txt");
 
-    if (!lf.good()) { std::cout << "Can't read save file"; return;} //Si la sauvegarde est vide
+    std::ifstream test("save.txt", std::ios::ate); // open at end
+
+    if (test.tellg() == 0) { std::cout << "Save file is empty"; return false;} //Si la sauvegarde est vide
+
+    test.close();
 
     //Recupere le nombre de tours
     std::getline (lf,line);
@@ -225,7 +246,7 @@ void Game::load() {
     p->PlayerBaseR = pbr;
     p->PlayerBaseL = pbl;
 
-    this->m_P = p;
+    m_P = p;
 
     //Recupere les infos des unites  
     while (!lf.eof()){
@@ -289,4 +310,6 @@ void Game::load() {
     }
 
     lf.close();
+
+    return true;
 }

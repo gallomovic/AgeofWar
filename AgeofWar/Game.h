@@ -27,7 +27,7 @@ public:
     void play();
 
     void save();
-    void load();
+    bool load();
 
 };
 

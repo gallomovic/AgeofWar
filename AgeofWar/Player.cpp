@@ -14,22 +14,21 @@ Player::~Player() {}
 //Achat d'unité pour le joueur
 void Player::achatUnit (Playground* p) {
 
-        if ((this->isLeft() && p->isFree(0)) || (!this->isLeft() && p->isFree(11)) ) {
 
-          std::cout << "What do you want to buy ?     1)Soldier (10g)      2)Archer (12g)          3)Catapult (20g)     4)Skip" << std::endl;
+        std::cout << this->getName() << ", what do you want to buy ?     1)Soldier (10g)      2)Archer (12g)          3)Catapult (20g)     4)Skip" << std::endl;
 
-          bool ok;
+        bool ok;
           
-          do {
+        do {
 
-          int choice;
-          ok = false;
-          
-          while (!(std::cin >> choice)) {
-                std::cin.clear();
-                std::cin.ignore(5,'\n');
-                std::cout << "Please enter a valid value (1, 2, 3 or 4)" << std::endl;
-          }
+                int choice;
+                ok = false;
+                
+                while (!(std::cin >> choice)) {
+                        std::cin.clear();
+                        std::cin.ignore(5,'\n');
+                        std::cout << "Please enter a valid value (1, 2, 3 or 4)" << std::endl;
+                }
 
                 switch (choice) { //CHECKER LE PRIX ET LE SOUSTRAIRE
                         case 1 : if (this->getGolds() >= 10){
@@ -37,7 +36,7 @@ void Player::achatUnit (Playground* p) {
                                 } else {
                                         std::cout << "Not enough gold to buy a soldier" << std::endl; break;
                                 }
-                        
+                                
                         case 2 : if (this->getGolds() >=12){
                                         this->setGolds((this->getGolds())-12); this->addUnit(p,new Archer(this->isLeft())); ok=true; break;
                                 } else {
@@ -52,13 +51,6 @@ void Player::achatUnit (Playground* p) {
                         default : std::cout << "Please enter a valid value (1, 2, 3 or 4)" << std::endl;
                 }
 
-          } while (!ok);
-
-        
-        } 
-        else {
-
-                std::cout << "Player can't buy ";
-                system("read");
-        }
+        } while (!ok);
+ 
 }

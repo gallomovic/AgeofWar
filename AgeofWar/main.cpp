@@ -26,7 +26,14 @@ int main() {
 	printMM();
 
 	std::string answ;
-    std::cin >> answ;
+
+    std::cout << "Start a new game ? (y/n) or type 'load' to load :  ";
+        
+    while (!(std::cin >> answ) && !(answ =="y" || answ =="n" || answ =="load")) {
+            std::cin.clear();
+            std::cin.ignore(5,'\n');
+            std::cout << "Please enter a valid value ('y', 'n', or 'load')" << std::endl;
+    }
 
     if (answ == "y"){
         
@@ -48,7 +55,7 @@ int main() {
 
         Game *G = new Game();
 
-		G->load();
+		if (!G->load()) { std::cin.get(); goto begin ;}
 
 		G->play();
 
