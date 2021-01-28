@@ -15,13 +15,19 @@ class Game
 
     Playground* m_P;
 
+    int nbTurns = 1;
+
 public:
 
+    Game();
     Game(int);
     ~Game();
 
     bool win();
     void play();
+
+    void save();
+    void load();
 
 };
 

@@ -25,6 +25,9 @@ public:
     bool isDead() const;
 
     int getHP() const { return m_hp; }
+    void setHP(int i) {  m_hp = i; }
+
+    std::string getName() { return m_name; }
 
     virtual void show() = 0;
 

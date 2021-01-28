@@ -62,7 +62,7 @@ void printMM(){
 */
     couleur("0");
 
-    std::cout << "Start a new game ? (y/n) :  ";
+    std::cout << "Start a new game ? (y/n) or (load) :  ";
     
 /*
     std::string answ;

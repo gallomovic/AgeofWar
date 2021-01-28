@@ -27,6 +27,7 @@ int main() {
 
 	std::string answ;
     std::cin >> answ;
+
     if (answ == "y"){
         
 		std::cout << std::endl << "Choose game mode: 	1) P1 vs P2 	2) P1 vs COM 	3) COM vs COM	" << std::endl;
@@ -39,6 +40,15 @@ int main() {
         }
 
 		Game *G = new Game(i);
+
+		G->play();
+
+    }
+	else if (answ == "load"){
+
+        Game *G = new Game();
+
+		G->load();
 
 		G->play();
 

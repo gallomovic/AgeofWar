@@ -11,11 +11,8 @@ class PlayerBase : public Units { //Probleme d'include circulaire si PlayerBase 
 
 public:
 
-    
-
     PlayerBase();
     ~PlayerBase();
-
 
 };
 
