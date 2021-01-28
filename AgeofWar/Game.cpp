@@ -74,6 +74,7 @@ void Game::play() {
 
         system("clear");
 
+
         std::cout << std::endl << "                       Turn Number : " << nbTours << "/200" << std::endl << std::endl;
         
         Playturn(this->m_P, this->m_PL, nbTours);
@@ -114,6 +115,15 @@ void Game::play() {
         //std::cout <<  std::endl << "__________________________________________________________________________________________________" << std::endl << std::endl;
         std::cin.get();
         system("clear");
+        
+
+        char q;
+        std::cout << "If you want to end the game press 'q'" << std::endl;
+        std::cin >> q;
+        if (q == 'q'){
+            std::cout << "Ending game ..." << std::endl;
+            break;
+        }
 
     } while (true);
 
