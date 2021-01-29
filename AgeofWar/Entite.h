@@ -12,29 +12,26 @@ protected:
 
     
     AbsPlayer* m_owner;
-
-public:
-
     int m_hp;
     std::string m_name;
-    
+
+
+public:
 
     Entite(int,std::string);
     virtual ~Entite();
 
-    bool isDead() const;
+    bool isDead() const; //Renvoie vrai si l'unite a <= 0 HP
 
     int getHP() const { return m_hp; }
     void setHP(int i) {  m_hp = i; }
 
     std::string getName() { return m_name; }
 
-    virtual void show() = 0;
-
     void setOwner(AbsPlayer* p) { m_owner = p; }
     AbsPlayer* getOwner() { return m_owner; }
 
-   
+    virtual void show() = 0;
 
 };
 

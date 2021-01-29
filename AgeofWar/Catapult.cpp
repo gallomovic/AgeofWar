@@ -20,7 +20,9 @@ Catapult::Catapult(bool isLeft) : Units(12, 6, 20, 4,"Catapult") {
 Catapult::~Catapult() {}
 
 void Catapult::attack(Playground *p,Units *cible) {
-	int d = std::abs(this->getPos() - cible->getPos());
+
+	int d = std::abs(this->getPos() - cible->getPos()); //distance entre la catapulte et sa cible
+
 	if (d == 2) { 
 		Units::attack(p,cible); 
 		if (this->getOwner()->isLeft()) {

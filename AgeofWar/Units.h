@@ -13,17 +13,16 @@ class Units : public Entite {
 
 protected:
 
-	//int m_hp;  // Health Points
-	int m_ap;	 // Attack Points
-	int m_price;
-	int m_portee;
+	int m_ap;	  // Points d'attaque
+	int m_price;  // Prix
+	int m_portee; // Portée
 
 	int m_pos;
 
-	std::string symbol[4];
+	std::string symbol[4]; // Contient le graphisme de l'unité
 
 
-	bool A1 = false; //a fait son action 1, pas besoin pour action 2 et 3
+	bool A1 = false; //true si l'unite a fait son action 1, pas besoin pour action 2 et 3
 
 
 public:
@@ -32,18 +31,10 @@ public:
 	Units(int,int,int,int,std::string);
 	virtual ~Units();
 
-
-	/*
-	int getHP() const;
-	int getAP() const;
-	int getPrice() const;
-	void setHP(int);
-	*/
-
 	//virtual void attack(Playground*,Entite*) const; //Attaque sur une Entite (PlayerBase) => Inutile pour l'instant car PlayerBase est de type Units
-	virtual void attack(Playground*,Units*);  // Attaque la cible passée en paramètre, la cible est retirée après l'attaque si elle est dead
+	virtual void attack(Playground*,Units*);  // Attaque la cible passée en paramètre, la cible est retirée après l'attaque si elle est morte
 
-	virtual Units* canAttack(Playground*);  // Renvoie la première unité attaquable
+	virtual Units* canAttack(Playground*);  // Renvoie la première unité attaquable (y compris la base adverse) et NULL sinon
 
 	virtual void action1(Playground*);
 	virtual void action2(Playground*);
@@ -60,7 +51,6 @@ public:
 	int getPosition(Playground*); // retourne l'indice de la position de l'unité
 
 	std::string getSymbol(int i) { return this->symbol[i]; }
-
 
 };
 

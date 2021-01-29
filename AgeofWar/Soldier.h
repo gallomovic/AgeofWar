@@ -12,7 +12,7 @@ class Soldier : public Units {
 
 private:
 
-	void promote(Playground*);
+	void promote(Playground*); //promotion de soldat a supersoldat
 
 public:
 	

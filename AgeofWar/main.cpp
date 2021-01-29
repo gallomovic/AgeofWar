@@ -50,14 +50,18 @@ int main() {
 
 		G->play();
 
+		delete G;
+
     }
 	else if (answ == "load"){
 
         Game *G = new Game();
 
-		if (!G->load()) { std::cin.get(); goto begin ;}
+		if (!G->load()) { goto begin ;}
 
 		G->play();
+
+		delete G;
 
     }
     else if (answ == "n"){
@@ -70,29 +74,3 @@ int main() {
 
 	goto begin;
 }
-
-/*
-
-
-int main(int argc, char * argv[]) {
-	if (argc>=2) {
-	// convert from *char to int to use switch
-	int mode = std::stoi(argv[1]);
-	switch ( mode ){
-		case 1:
-		case 2:
-		std::cout << "Game mode : " << mode << std::endl;
-		break;
-		default:
-		std::cerr << "Unknown game mode." << std::endl;
-		return 0;
-	}
-	} else {
-		std::cerr << "Not enough arguments. Aborting..." << std::endl;
-	return 0;
-	}
-	return 0;
-}
-
-
-*/

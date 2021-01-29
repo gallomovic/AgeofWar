@@ -3,7 +3,7 @@
 #include <iostream>
 
 
-void Playturn(Playground*, AbsPlayer*,int);
+void Playturn(Playground*, AbsPlayer*,int); //Tour de jeu des unités d'un joueur
 
 
 #endif

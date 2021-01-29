@@ -7,6 +7,10 @@
 /*30 Noir 31 Rouge 32 Vert 33 Jaune 34 Bleu 35 Magenta 36 Cyan 37 Blanc */ //police
 /* 40 Noir 41 Rouge 42 Jaune 43 Vert 44 Bleu 45 Magenta 46 Cyan 47 Blanc */ //fond
 
+Playground::Playground() {}
+
+Playground::~Playground() {}
+
 void print10(std::string s) {  //Print la string contenue dans 10 charactères 
 
         int n =  10-s.size();
@@ -144,13 +148,13 @@ void Playground::printPG(AbsPlayer* p1, AbsPlayer *p2){
                         {
                                 couleur("31"); //rouge
                                 couleur("1");
-                                print10(pg[i]->m_name);
+                                print10(pg[i]->getName());
                                 couleur("0");
                         }
                         else {
                                 couleur("34"); //bleu
                                 couleur("1");
-                                print10(pg[i]->m_name);
+                                print10(pg[i]->getName());
                                 couleur("0");
                         }
                                 

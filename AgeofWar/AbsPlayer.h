@@ -18,22 +18,20 @@ class AbsPlayer
 protected:
 
     std::vector<Units*> m_PlayerUnits; //Contient les unités du joueur
-    bool m_isLeft; //True = Joueur à gauche
-    int m_golds;
+    bool m_isLeft;                     //True = Joueur à gauche
+    int m_golds;                       //Golds du joueur
 
     std::string m_name;
 
-    //PlayerBase* PB;
-
 public:
 
-    AbsPlayer(bool);
+    AbsPlayer(bool); //si bool = true, le joueur est a gauche
     ~AbsPlayer();
 
     void addUnit(Playground*,Units*,int = -1); /* ajoute l'unite passée en paramètre sur le Playground et dans le vecteur d'unités du joueur
                                           int donne la position où ajouter (-1 si non paramétré et donc la premiere case de gauche ou droite) */
 
-    void sortVectorUnit();
+    void sortVectorUnit(); //trie le vecteur unité en fonction de leur positions
 
     void setGolds(int value);
 

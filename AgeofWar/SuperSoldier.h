@@ -11,7 +11,7 @@ class SuperSoldier : public Units {
 
 public:
     
-	SuperSoldier(int);
+	SuperSoldier(int); //Constructeur avec le nombre de pv en paramètre
 	~SuperSoldier();
 
 };

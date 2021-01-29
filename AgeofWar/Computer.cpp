@@ -10,7 +10,7 @@ Computer::Computer (bool i) : AbsPlayer(i) {
 
 Computer::~Computer() {}
 
-//Achat d'unité pour le computer
+//Achat d'unité pour le computer, il achete toujours la plus chere possible
 void Computer::achatUnit (Playground* p) {
 
     if (this->getGolds() >= 20){

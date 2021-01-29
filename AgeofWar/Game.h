@@ -10,12 +10,12 @@
 class Game
 {
 
-    AbsPlayer* m_PL;
-    AbsPlayer* m_PR;
+    AbsPlayer* m_PL; //Joueur gauche
+    AbsPlayer* m_PR; //Joueur droit
 
-    Playground* m_P;
+    Playground* m_P; //Terrain de jeu
 
-    int nbTurns = 1;
+    int nbTurns = 1; //Compteur de tours
 
 public:
 

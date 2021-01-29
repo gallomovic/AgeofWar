@@ -10,7 +10,7 @@
 
 Game::Game() {}
 
-Game::Game(int i) {
+Game::Game(int i) { //i indique le mode souhaité , 1=PvP, 2=PvC, 3=CvC
 
     Playground *p = new Playground();
     
@@ -55,16 +55,20 @@ Game::~Game() {}
 bool Game::win() {
 
     if (this->m_P->PlayerBaseR->getHP() <= 0) {
-        std::cout << std::endl << "              VICTOIRE DE " << this->m_PL->getName() << " !" << std::endl << std::endl;
+        std::cout << std::endl << "              VICTOIRE DE " << this->m_PL->getName() << " ! Press Enter to get back to main menu.." << std::endl << std::endl;
+        std::cin.clear();
+        std::cin.ignore(1000,'\n');
+        std::cin.get();
         return true;
     }
     if (this->m_P->PlayerBaseL->getHP() <= 0) {
-        std::cout << std::endl << "              VICTOIRE DE " << this->m_PR->getName()  << " !" << std::endl << std::endl;
+        std::cout << std::endl << "              VICTOIRE DE " << this->m_PR->getName()  << " ! Press Enter to get back to main menu.." << std::endl << std::endl;
+        std::cin.clear();
+        std::cin.ignore(1000,'\n');
+        std::cin.get();
         return true;
     }
     return false;
-
-    std::cin.get();
 
 }
 

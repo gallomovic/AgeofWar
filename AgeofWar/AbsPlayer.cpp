@@ -1,17 +1,7 @@
 #include "Player.h"
 
 
-AbsPlayer::AbsPlayer (bool i) : m_isLeft(i) , m_golds(10) {
-/*
-    if (i) {
-        PlayerBase *pl = new PlayerBase(this);
-        p->pg[0] = pl;
-    } else {
-        PlayerBase *pl = new PlayerBase(this);
-        p->pg[p->pg.size()-1] = pl;
-    }
-*/
-}
+AbsPlayer::AbsPlayer (bool i) : m_isLeft(i) , m_golds(10) {}
 
 AbsPlayer::~AbsPlayer() {}
 
@@ -47,17 +37,14 @@ void AbsPlayer::addUnit(Playground *p, Units *u, int pos) {
 void AbsPlayer::deleteUnit(Playground* p, Units *u) {
 
     int i = u->getPos();
-    p->pg[i] = NULL;
 
-    for (int i = 0; i<(int)this->m_PlayerUnits.size() ; i++) {
+    p->pg[i] = NULL; //on supprime l'unité du terrain de jeu
+
+    for (int i = 0; i<(int)this->m_PlayerUnits.size() ; i++) { //puis des unites du joueur
         if (this->m_PlayerUnits.at(i) == u) {
             this->m_PlayerUnits.erase(this->m_PlayerUnits.begin()+i);
         }
     }
-
-
-   // delete u ; 
-
 }
 
 

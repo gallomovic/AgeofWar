@@ -1,13 +1,25 @@
+<<<<<<< Updated upstream
 7
 Player1
 22
+=======
+8
+Player1
+12
+>>>>>>> Stashed changes
 COM2
 8
 100
 100
+<<<<<<< Updated upstream
 Soldier
 10
 0
+=======
+Catapult
+12
+1
+>>>>>>> Stashed changes
 Player1
 Soldier
 10

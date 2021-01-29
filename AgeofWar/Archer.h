@@ -13,7 +13,6 @@ public:
 	Archer(bool isLeft);
 	~Archer();
 
-	//bool canAttack();
 	void action3(Playground*);
 	void show();
 
