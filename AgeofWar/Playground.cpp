@@ -28,7 +28,7 @@ void Playground::printlogo(){
 
         
 
-        couleur("37"); 
+        couleur("37"); //vert
         couleur("1"); //intensifie la couleur
         
 
@@ -52,7 +52,7 @@ void Playground::printlogo(){
         std::cout << std::endl;
         std::cout << std::endl;
 
-        couleur("0");
+        couleur("0"); //reinitialisation de la couleur
         
 }
 
@@ -64,7 +64,7 @@ void Playground::printPG(AbsPlayer* p1, AbsPlayer *p2){
 
         //affichage des infos du jeu 
 
-        couleur("31");
+        couleur("31");//rouge
         couleur("1");
         
         std::cout << "  " << p1->getName() << std::endl;
@@ -80,7 +80,7 @@ void Playground::printPG(AbsPlayer* p1, AbsPlayer *p2){
         std::cout << "______________________________" << std::endl;
         std::cout << std::endl;
 
-        couleur("34");
+        couleur("34");//bleu
         couleur("1");
 
         std::cout << "  " << p2->getName() << std::endl;
@@ -102,7 +102,7 @@ void Playground::printPG(AbsPlayer* p1, AbsPlayer *p2){
 
 
         
-        couleur("36");
+        couleur("36"); //bleu ciel
         couleur("1");
 
         //bases

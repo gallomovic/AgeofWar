@@ -16,10 +16,10 @@ class Playground
 
 public:
 
-    std::array<Units*,12> pg;
+    std::array<Units*,12> pg; //playground
 
-    Units* PlayerBaseL;
-    Units* PlayerBaseR;
+    Units* PlayerBaseL; //base du joueur de gauche
+    Units* PlayerBaseR; //base du joueur de droite
 
 
     Playground(){    };
@@ -27,8 +27,8 @@ public:
         //delete this;
     };
 
-    void printPG(AbsPlayer*,AbsPlayer*);
-    void printlogo();
+    void printPG(AbsPlayer*,AbsPlayer*); //affichage
+    void printlogo(); //affichage du logo au lancement du jeu
     
     bool isFree(int); //Renvoie true si la position est vide
     
