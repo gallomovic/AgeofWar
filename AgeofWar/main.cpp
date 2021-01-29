@@ -61,7 +61,8 @@ int main() {
 
     }
     else if (answ == "n"){
-
+		
+		system("clear");
         return 0;
 
     }

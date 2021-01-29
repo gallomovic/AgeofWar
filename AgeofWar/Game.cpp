@@ -159,7 +159,7 @@ void Game::save() {
     sf.open("save.txt", std::ofstream::out | std::ofstream::trunc); //ouvre save.txt et supprime son contenu
 
     //Nombre de tours
-    sf << nbTurns << "\n";
+    sf << nbTurns+1 << "\n";
 
     //Infos joueur de gauche
     sf << m_PL->getName() << "\n";
